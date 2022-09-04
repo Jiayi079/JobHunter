@@ -26,10 +26,12 @@ header::after {
   clear: both;
 }
 
-img {
-  float: left;
-  height: auto;
-  width: auto;
+label.logo {
+  color: white;
+  font-size: 30px;
+  line-height: 120px;
+  padding: 0 10px;
+  font-weight: bold;
 }
 
 nav {
@@ -216,7 +218,28 @@ nav a:hover:after {
     margin-bottom: 24px;
 }
 
-@media screen and (min-width: 1440px) {
+.team-container .team-grid .team-card .button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.team-container .team-grid .team-card .button a {
+  background-color: #3d3d3d;
+  padding: 3px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.team-container .team-grid .team-card .button a:hover {
+  background-color: #2a41a5;
+  color: #fff;
+}
+
+
+
+/* @media screen and (min-width: 1440px) {
     .team-member-image {
       width: 270px;
       height: 270px;
@@ -263,7 +286,7 @@ nav a:hover:after {
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
     }
-}
+} */
 
 #one {
     -ms-grid-column: span 1;
