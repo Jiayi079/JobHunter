@@ -16,7 +16,7 @@
 | Student Name |   Student Email    | GitHub Username |
 |    :---:     |      :---:         |     :---:       |
 |   Jiayi Gu   | jgu3@mail.sfsu.edu |    Jiayi079     |
-| member2      |                    |                 |
+| Chengkai Yang | chengkaiyang914@gmail.com | Eason-Yang914 |
 | member3      |                    |                 |
 | member4      |                    |                 |
 | member5      |                    |                 |
