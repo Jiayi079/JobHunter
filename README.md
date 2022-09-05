@@ -18,7 +18,7 @@
 |   Jiayi Gu   | jgu3@mail.sfsu.edu |    Jiayi079     |
 | Chengkai Yang | chengkaiyang914@gmail.com | Eason-Yang914 |
 | Muzaffar Sharapov|msharapov@mail.sfsu.edu| mansursh |
-| member4      |                    |                 |
+| Yagiz Saatci |ybsaatci@sfsu.edu   |    ybsaatci     |
 | member5      |                    |                 |
 | member6      |                    |                 |
 
