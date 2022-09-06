@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CSC-648-SFSU/csc648-02-fa22-team04#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mysql": "^2.18.1"
   }
 }
