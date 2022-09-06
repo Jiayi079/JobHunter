@@ -11,11 +11,11 @@
 2. SSH username
 3. SSH password or key.
     <br> If a ssh key is used please upload the key to the credentials folder.
-4. Database URL or IP and port used.
+4. Database IP: 127.0.0.1 Port 3306
     <br><strong> NOTE THIS DOES NOT MEAN YOUR DATABASE NEEDS A PUBLIC FACING PORT.</strong> But knowing the IP and port number will help with SSH tunneling into the database. The default port is more than sufficient for this class.
-5. Database username
-6. Database password
-7. Database name (basically the name that contains all your tables)
+5. root
+6. csc648team04
+7. CSC648Team04
 8. Instructions on how to use the above information.
 
 # Most important things to Remember
