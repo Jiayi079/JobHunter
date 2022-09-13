@@ -18,7 +18,7 @@
 |   Jiayi Gu   | jgu3@mail.sfsu.edu |    Jiayi079     |
 | Chengkai Yang | chengkaiyang914@gmail.com | Eason-Yang914 |
 | Muzaffar Sharapov|msharapov@mail.sfsu.edu| mansursh |
-| Yagiz Saatci |ybsaatci@sfsu.edu   |    ybsaatci     |
+| Yagiz Saatci |ysaatci@sfsu.edu   |    ybsaatci     |
 | Julian Manaois     |   jmanaois1@mail.sfsu.edu                 |  jmanaois               |
 
 ## NO code needs to be stored in the root of your repository. You may rename the application folder if you like to your team's application name. But all source code related to your team's application should be stored inside the application folder.
