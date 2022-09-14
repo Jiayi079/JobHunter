@@ -14,9 +14,10 @@
 4. Database IP: 127.0.0.1 Port 3306
     <br><strong> NOTE THIS DOES NOT MEAN YOUR DATABASE NEEDS A PUBLIC FACING PORT.</strong> But knowing the IP and port number will help with SSH tunneling into the database. The default port is more than sufficient for this class.
 5. root
-6. csc648team04
+6. Root@123
 7. CSC648Team04
-8. Instructions on how to use the above information.
+8. Connect to database by logging into root account using the SSH username and password. Make sure SSH key is downloaded from Credentials folder.
+Make sure IP and port is input correctly. Test connection to make sure you are connected to DB. YoU can launch website from the WWW link.
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
