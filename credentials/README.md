@@ -7,7 +7,8 @@
 
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
-1. Server URL or IP: http://ec2-54-219-178-143.us-west-1.compute.amazonaws.com/
+1. Server URL: http://ec2-13-56-151-200.us-west-1.compute.amazonaws.com
+or IP: 13.56.151.200
 2. SSH username: ubuntu
 3. SSH password or key: s1.pem (inside server folder)
     <br> If a ssh key is used please upload the key to the credentials folder.
