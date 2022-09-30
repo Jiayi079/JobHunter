@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const port = 3000
-const things = require('./things.js')
+const things = require('./things')
 const mysql = require('mysql')
 
 const connection = mysql.createConnection({
