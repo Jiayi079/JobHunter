@@ -24,6 +24,10 @@ app.use('css', express.static(__dirname, + 'application/memberPages'))
 
 app.use('/things', things)
 
+app.use('things/search', function(req, res) => {
+  console.log("success")
+})
+app.use('')
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 })
