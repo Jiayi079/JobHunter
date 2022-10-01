@@ -32,6 +32,7 @@ app.use('/things', function(req, res, next){
 // Route handler that sends the response
 app.get('/things', function(req, res, next){
   res.send('Things');
+  next();
 });
 
 app.get('/things/search', function(req, res) {
