@@ -30,9 +30,13 @@ app.use('/things', function(req, res, next){
 });
 
 // Route handler that sends the response
-app.get('/things', function(req, res){
+app.get('/things', function(req, res, next){
   res.send('Things');
 });
+
+app.get('/things/search', function(req, res) {
+  console.log("success")
+})
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 })
