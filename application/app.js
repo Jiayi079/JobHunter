@@ -4,6 +4,7 @@ const path = require('path')
 const port = 3000
 const things = require('./things')
 const mysql = require('mysql')
+const { nextTick } = require('process')
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -22,12 +23,16 @@ app.use('css', express.static(__dirname, + 'application/css'))
 app.use('css', express.static(__dirname, + 'application/memberPages'))
 
 
-app.use('/things', things)
-
-app.use('/things/search', function(req, res) {
-  console.log("success");
+//Middleware function to log request protocol
+app.use('/things', function(req, res, next){
+  console.log("A request for things received at " + Date.now());
+  next();
 });
-app.use('')
+
+// Route handler that sends the response
+app.get('/things', function(req, res){
+  res.send('Things');
+});
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 })
