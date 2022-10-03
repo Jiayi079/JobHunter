@@ -58,9 +58,7 @@ function search(req, res, next) {
   });
 }
 // Route handler that sends the response
-app.get('/', function(req, res){
-  res.render('pages/index')
-});
+
 
 app.get('/', search, (req, res) => {
   var searchResult = req.searchResult;
