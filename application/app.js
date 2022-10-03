@@ -15,7 +15,7 @@ const database = mysql.createConnection({
 database.connect((err) => {
   if (err) throw err;
   console.log('Connected');
-  database.query('Use Example');
+  database.query('Use sys');
 })
 
 const postListng = [
