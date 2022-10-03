@@ -64,7 +64,7 @@ app.get('/', function(req, res){
 
 app.get('/', search, (req, res) => {
   var searchResult = req.searchResult;
-  res.render('pages/search', {
+  res.render('pages/index', {
     results: searchResult.length,
     searchTerm: req.searchTerm,
     searchResult: searchResult,
