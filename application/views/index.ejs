@@ -1,4 +1,6 @@
 <html>
+  <% var searchTerm; %>
+  <% var category; %>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -85,9 +87,15 @@ body {
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
   <div class="search-container">
-    <form action="/search">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit">Submit</button>
+    <!-- Search Bar --> 
+    <form>
+      <input id="search" type="text" name="search" value="<%= searchTerm %>" placeholder="Search...">
+      <!-- Category Dropdown-->
+      <select name="category" onchange="this.form.submit()">
+        <option value="">All Categories</option>
+        <option value="Category1" <% if (category == "Category1") { %> selected <%} %> >Category1</option>
+        <option value="Category2" <% if (category == "Category2") { %> selected <%} %> >Category2</option>
+      </select>
     </form>
   </div>
 </div>
