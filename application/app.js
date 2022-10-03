@@ -5,7 +5,6 @@ const port = 3000
 const mysql = require('mysql')
 const { nextTick } = require('process')
 
-const mysql = require('mysql');
 const database = mysql.createConnection({
   host: 'localhost',
   user: 'root',
