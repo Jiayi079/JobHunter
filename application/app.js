@@ -33,7 +33,7 @@ function search(req, res, next) {
 }
 // Route handler that sends the response
 app.get('/', function(req, res){
-  res.render('index')
+  res.render('pages/index')
 });
 
 app.get('/jobs', (req, res) => {
