@@ -70,7 +70,7 @@ app.get('/', search, (req, res) => {
   });
 })
 app.get('/jobs', (req, res) => {
-  res.send(postListng)
+  res.send(201)
 })
 
 app.post('/jobs', (req, res) => {
