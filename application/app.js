@@ -5,6 +5,20 @@ const port = 3000
 const mysql = require('mysql')
 const { nextTick } = require('process')
 
+const mysql = require('mysql');
+const database = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'Root@123',
+  database: 'mysql'
+});
+
+database.connect((err) => {
+  if (err) throw err;
+  console.log('Connected');
+  database.query('Use Example');
+})
+
 const postListng = [
   {
     company: 'Google',
