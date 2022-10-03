@@ -18,16 +18,6 @@ database.connect((err) => {
   database.query('Use sys');
 })
 
-const postListng = [
-  {
-    company: 'Google',
-    jobName: 'SWE'
-  },
-  {
-    company: 'Uber',
-    jobName: 'AI'
-  }
-]
 
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
@@ -43,12 +33,44 @@ function search(req, res, next) {
   var searchTerm = req.query.search;
 
   var category = req.query.catagory;
+
+  let query = 'SELECT * FROM Posting';
+  if (searchTerm != '' && category != '') {
+    query = `SELECT * FROM Posting WHERE Category = '` + category + `' AND (Name LIKE '%` + searchTerm + `%' OR Comment LIKE '%` + searchTerm + `%')`;
+  } else if(searchTerm != '' && category == '') {
+    query = `SELECT * FROM Posting WHERE Name LIKE '%` + searchTerm + `%' OR Comment LIKE '%` + searchTerm + `%'`;
+  } else if(searchTerm == '' && category != '') {
+    query = `SELECT * FROM Posting WHERE Category = '` + category + `'`;
+  }
+  database.query(query, (err, result) => {
+    if(err) {
+      req.searchResult = "";
+      req.searchTerm = "";
+      req.category = "";
+      next()
+    }
+
+    req.searchResult = result;
+    req.searchTerm = searchTerm;
+    req.category = "";
+
+    next();
+  });
 }
 // Route handler that sends the response
 app.get('/', function(req, res){
   res.render('pages/index')
 });
 
+app.get('/', search, (req, res) => {
+  var searchResult = req.searchResult;
+  res.render('pages/search', {
+    results: searchResult.length,
+    searchTerm: req.searchTerm,
+    searchResult: searchResult,
+    category: req.category
+  });
+})
 app.get('/jobs', (req, res) => {
   res.send(postListng)
 })
