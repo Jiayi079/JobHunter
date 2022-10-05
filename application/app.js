@@ -57,7 +57,7 @@ app.get('/', search, (req, res) => {
   res.render('pages/index', {
     results: req.searchResult.length,
     searchVal: req.searchVal,
-    searchResult: searchResult,
+    searchResult: req.searchResult,
     category: req.category
   }) 
 })
