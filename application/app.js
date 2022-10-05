@@ -72,20 +72,6 @@ function search(req, res, next) {
       next();
     })
   }
-  database.query(query, sqlParams, (err, result) => {
-    if (err) {
-      req.searchResult = "";
-      req.searchVal = "";
-      req.category = "";
-      next();
-    }
-
-    req.searchResult = result;
-    req.searchVal = searchVal;
-    req.category = "";
-
-    next();
-  })
 };
 
 app.set("views", path.join(__dirname, "views"));
