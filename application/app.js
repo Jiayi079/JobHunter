@@ -79,7 +79,7 @@ app.get('/searchJobs', search, (req, res) => {
     category: req.category
   });
   console.log(req.body)
-  console.log(results, searchTerm, searchResult, category)
+  console.log(req.searchTerm, req.category, searchResult, searchResult.length)
 })
 app.get('/jobs', (req, res) => {
   res.send(201)
