@@ -59,7 +59,7 @@ function search(req, res, next) {
 }
 // Route handler that sends the response
 
-app.get('/', (req, res) => {
+app.get('/', search, (req, res) => {
   res.render('pages/index',
   {
     results: searchResult.length,
