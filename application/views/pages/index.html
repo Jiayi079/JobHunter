@@ -1,6 +1,4 @@
 <html>
-  <% var searchTerm; %>
-  <% var category; %>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -81,34 +79,6 @@ body {
 </style>
 </head>
 <body>
- <!-- Render result script --> 
-  <script>
-    $( document ).ready(function() {
-        <% for (var i = 0; i < results; i++) { %>
-        document.getElementById('result').innerHTML += '<p> <%= searchResult[i]['ID'] %>, <% searchResult[i]['Name'] %> </p>'
-        document.getElementById('result').innerHTML += '<p> Item Category: <% searchResult[i]['Category'] %> Comment: <%= searchResut[i]['Comment'] %></p>'
-        document.getElementById('result').innerHTML += '<p>Price: <%= searchResult[i]['Price'] %> $</p>' 
-        <% } %>
-    });
-</script>
-
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <div class="search-container">
-    <!-- Search Bar --> 
-    <form action="/searchJobs">
-      <input id="search" type="text" name="search" value="<%= searchTerm %>" placeholder="Search...">
-      <!-- Category Dropdown-->
-      <select name="category" onchange="this.form.submit()">
-        <option value="">All Categories</option>
-        <option value="Software Dev" <% if (category == "Software Dev") { %> selected <%} %> >Software Dev</option>
-        <option value="AI" <% if (category == "AI") { %> selected <%} %> >AI</option>
-      </select>
-    </form>
-  </div>
-</div>
 
 <div style="padding-left:16px">
   <h2>Responsive Search Bar</h2>
