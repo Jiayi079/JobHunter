@@ -12,7 +12,7 @@
 </div>
 <div class="search-container">
   <form action="/searchJobs">
-    <input id="search" type="text" name="search" value="<%= searchVal %> " placeholder="Search..">
+    <input id="search" type="text" name="search" placeholder="Search..">
     <select name="category" onchange="this.form(submit)">
       <option value="AI" <% if (category == "AI") { %> selected <% } %> >AI</option>
     </select>
