@@ -53,8 +53,13 @@ app.use(express.urlencoded())
 
 // Route handler that sends the response
 
-app.get('/', (req, res) => {
-  res.render('pages/index')
+app.get('/', search, (req, res) => {
+  res.render('pages/index', {
+    results: req.searchResult.length,
+    searchVal: req.searchVal,
+    searchResult: searchResult,
+    category: req.category
+  }) 
 })
 
 app.get('/searchJobs', search, (req, res) => {
