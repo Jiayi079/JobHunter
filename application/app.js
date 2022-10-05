@@ -20,6 +20,8 @@ database.connect((err) => {
 
 function search(req, res, next) {
   var searchVal = req.query.search
+  searchVal = searchVal.trim();
+  console.log(searchVal)
   var category = req.query.category
   var sqlSearchVal = '%' + searchVal + '%'
   var query = 'SELECT * From Posting';
