@@ -36,6 +36,10 @@ app.get('/', (req, res) => {
   res.render('pages/index')
 })
 
+app.get('/searchJobs', (req, res) => {
+  console.log(req.body)
+})
+
 
 app.get('/jobs', (req, res) => {
   res.send(201)
