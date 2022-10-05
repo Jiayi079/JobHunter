@@ -23,8 +23,8 @@ function search(req, res, next) {
   var category = req.query.category
 
   let query = 'SELECT * From Posting';
-  if(searchVal != '' %% category != '') {
-    query = 'SELECT * FROM Posting WHERE Category = '` + category + `' AND ( Name LIKE '%` + searchVal + `%' OR Comment LIKE '%` + searchVal + `%')`;
+  if(searchVal != '' && category != '') {
+    query = 'SELECT * FROM Posting WHERE Category = '` + category + `' AND (g Name LIKE '%` + searchVal + `%' OR Comment LIKE '%` + searchVal + `%')`;
   }
   database.query(query, (err, result) => {
     if (err) {
