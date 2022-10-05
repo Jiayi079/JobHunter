@@ -62,9 +62,6 @@ app.get('/', search, (req, res) => {
   }) 
 })
 
-app.get('/searchJobs', search, (req, res) => {
-  console.log(req.searchResult)
-})
 
 
 app.get('/jobs', (req, res) => {
