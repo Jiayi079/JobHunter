@@ -59,8 +59,11 @@ function search(req, res, next) {
 }
 // Route handler that sends the response
 
+app.get('/', (req, res) => {
+  res.render('pages/index')
+})
 
-app.get('/', search, (req, res) => {
+app.get('/searchJobs', search, (req, res) => {
   var searchResult = req.searchResult;
   res.render('pages/index', {
     results: searchResult.length,

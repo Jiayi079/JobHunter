@@ -81,6 +81,7 @@ body {
 </style>
 </head>
 <body>
+ <!-- Render result script --> 
   <script>
     $( document ).ready(function() {
         <% for (var i = 0; i < results; i++) { %>
@@ -97,7 +98,7 @@ body {
   <a href="#contact">Contact</a>
   <div class="search-container">
     <!-- Search Bar --> 
-    <form>
+    <form action="/searchJobs">
       <input id="search" type="text" name="search" value="<%= searchTerm %>" placeholder="Search...">
       <!-- Category Dropdown-->
       <select name="category" onchange="this.form.submit()">
