@@ -32,7 +32,7 @@ app.use(express.urlencoded())
 
 // Route handler that sends the response
 
-app.get('/', search, (req, res) => {
+app.get('/', (req, res) => {
   res.render('pages/index')
 })
 
