@@ -61,7 +61,8 @@ app.get('/', search, (req, res) => {
     searchVal: req.searchVal,
     searchResult: req.searchResult,
     category: req.category
-  }) 
+  })
+  console.log(req.searchResult); 
 })
 
 
