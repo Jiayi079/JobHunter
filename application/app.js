@@ -74,6 +74,23 @@ function search(req, res, next) {
       
       next();
     })
+  } else {
+    query = "SELECT * FROM Posting"
+    console.log(query)
+    database.query(query, [category], (err, result) => {
+      if (err) {
+        req.searchResult = "";
+        req.searchVal = "";
+        req.category = "";
+        next();
+      }
+  
+      req.searchResult = result;
+      req.searchVal = searchVal;
+      req.category = "";
+      
+      next();
+    })
   }
 };
 
