@@ -5,7 +5,7 @@
 </head>
 <body>
 <% var category; %> 
-
+<% var searchVal; %>
 <div style="padding-left:16px">
   <h2>Responsive Search Bar</h2>
   <p>Navigation bar with a search box and a submit button inside of it.</p>
@@ -13,7 +13,7 @@
 </div>
 <div class="search-container">
   <form>
-    <input id="search" type="text" name="search" placeholder="Search..">
+    <input id="search" type="text" value="<%= searchVal %> " name="search" placeholder="Search..">
     <select name="category" onchange="this.form(submit)">
       <option value="AI" <% if (category == "AI") { %> selected <% } %> >AI</option>
     </select>
