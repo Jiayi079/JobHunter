@@ -25,7 +25,7 @@ function search(req, res, next) {
   var query = 'SELECT * From Posting';
   if(searchVal != '' && category != '') {
     query = "SELECT * FROM Posting WHERE Category = ? AND ( Name LIKE ?  OR Comment LIKE ?)";
-    database.query(query, [category, searchVal, searchVal], (err, result) => {
+    database.query(query, [category, sqlSearchVal, sqlSearchVal], (err, result) => {
       if (err) {
         req.searchResult = "";
         req.searchVal = "";
@@ -41,7 +41,7 @@ function search(req, res, next) {
     })
   } else if(searchVal != '' && category == '') {
     query = "SELECT * FROM Posting WHERE Name LIKE ? OR Comment LIKE ?";
-    database.query(query, [searchVal, searchVal], (err, result) => {
+    database.query(query, [sqlSearchVal, sqlSearchVal], (err, result) => {
       if (err) {
         req.searchResult = "";
         req.searchVal = "";
