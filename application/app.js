@@ -20,6 +20,7 @@ database.connect((err) => {
 
 
 app.set("views", path.join(__dirname, "views"));
+app.set('view engine', 'ejs');
 
 app.use(express.static('application'))
 app.use('css', express.static(__dirname, + 'application/css'))
@@ -28,58 +29,14 @@ app.use('css', express.static(__dirname, + 'application/memberPages'))
 app.use(express.json())
 app.use(express.urlencoded())
 
-function search(req, res, next) {
-  var searchTerm = req.query.search;
 
-  var category = req.query.catagory;
-
-  let query = 'SELECT * FROM Posting';
-  if (searchTerm != '' && category != '') {
-    query = `SELECT * FROM Posting WHERE Category = '` + category + `' AND (Name LIKE '%` + searchTerm + `%' OR Comment LIKE '%` + searchTerm + `%')`;
-  } else if(searchTerm != '' && category == '') {
-    query = `SELECT * FROM Posting WHERE Name LIKE '%` + searchTerm + `%' OR Comment LIKE '%` + searchTerm + `%'`;
-  } else if(searchTerm == '' && category != '') {
-    query = `SELECT * FROM Posting WHERE Category = '` + category + `'`;
-  }
-  database.query(query, (err, result) => {
-    if(err) {
-      req.searchResult = "";
-      req.searchTerm = "";
-      req.category = "";
-      next()
-    }
-
-    req.searchResult = result;
-    req.searchTerm = searchTerm;
-    req.category = "";
-
-    next();
-  });
-}
 // Route handler that sends the response
 
 app.get('/', search, (req, res) => {
-  var searchResult = req.searchResult;
-  res.render('pages/index',
-  {
-    results: searchResult.length,
-    searchTerm: req.searchTerm,
-    searchResult: searchResult,
-    category: req.category
-  })
+  res.render('pages/index')
 })
 
-app.get('/searchJobs', search, (req, res) => {
-  var searchResult = req.searchResult;
-  res.render('pages/index', {
-    results: searchResult.length,
-    searchTerm: req.searchTerm,
-    searchResult: searchResult,
-    category: req.category
-  });
-  console.log(req.body)
-  console.log(req.searchTerm, req.category, searchResult, searchResult.length)
-})
+
 app.get('/jobs', (req, res) => {
   res.send(201)
 })
