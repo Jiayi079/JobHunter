@@ -78,6 +78,8 @@ app.get('/searchJobs', search, (req, res) => {
     searchResult: searchResult,
     category: req.category
   });
+  console.log(req.body)
+  console.log(results, searchTerm, searchResult, category)
 })
 app.get('/jobs', (req, res) => {
   res.send(201)
