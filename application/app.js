@@ -21,10 +21,11 @@ database.connect((err) => {
 function search(req, res, next) {
   var searchVal = req.query.search
   var category = req.query.category
-  sqlParams = [category];
+  var sqlSearchVal = '%' + searchVal + '%'
+  sqlParams = [category, sqlSearchVal, sqlSearchVal];
   var query = 'SELECT * From Posting';
   if(searchVal != '' && category != '') {
-    query = "SELECT * FROM Posting WHERE Category = ?";
+    query = "SELECT * FROM Posting WHERE Category = ? AND ( Name LIKE %?%  OR Comment LIKE %?%)";
   }
   database.query(query, sqlParams, (err, result) => {
     if (err) {
