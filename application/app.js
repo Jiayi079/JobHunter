@@ -22,10 +22,55 @@ function search(req, res, next) {
   var searchVal = req.query.search
   var category = req.query.category
   var sqlSearchVal = '%' + searchVal + '%'
-  sqlParams = [category, sqlSearchVal, sqlSearchVal];
   var query = 'SELECT * From Posting';
   if(searchVal != '' && category != '') {
     query = "SELECT * FROM Posting WHERE Category = ? AND ( Name LIKE ?  OR Comment LIKE ?)";
+    database.query(query, [category, searchVal, searchVal], (err, result) => {
+      if (err) {
+        req.searchResult = "";
+        req.searchVal = "";
+        req.category = "";
+        next();
+      }
+  
+      req.searchResult = result;
+      req.searchVal = searchVal;
+      req.category = "";
+  
+      next();
+    })
+  } else if(searchVal != '' && category == '') {
+    query = "SELECT * FROM Posting WHERE Name LIKE ? OR Comment LIKE ?";
+    database.query(query, [searchVal, searchVal], (err, result) => {
+      if (err) {
+        req.searchResult = "";
+        req.searchVal = "";
+        req.category = "";
+        next();
+      }
+  
+      req.searchResult = result;
+      req.searchVal = searchVal;
+      req.category = "";
+  
+      next();
+    })
+  } else if(searchVal == '' && category != '') {
+    query = "SELECT * FROM Posting WHERE Category = ?"
+    database.query(query, [category], (err, result) => {
+      if (err) {
+        req.searchResult = "";
+        req.searchVal = "";
+        req.category = "";
+        next();
+      }
+  
+      req.searchResult = result;
+      req.searchVal = searchVal;
+      req.category = "";
+  
+      next();
+    })
   }
   database.query(query, sqlParams, (err, result) => {
     if (err) {
