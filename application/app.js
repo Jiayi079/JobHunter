@@ -19,8 +19,7 @@ database.connect((err) => {
 })
 
 function search(req, res, next) {
-  var searchVal = req.query.search
-  searchVal = searchVal.trim();
+  var searchVal = req.query.search == undefined ? '' : req.query.search.trim();
   console.log(searchVal)
   var category = req.query.category
   var sqlSearchVal = '%' + searchVal + '%'
