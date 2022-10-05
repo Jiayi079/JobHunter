@@ -18,6 +18,27 @@ database.connect((err) => {
   database.query('Use sys');
 })
 
+function search(req, res, next) {
+  var searchVal = req.query.search
+  var category = req.query.category
+
+  let query = 'SELECT * From Posting';
+
+  database.query(query, (err, result) => {
+    if (err) {
+      req.searchResult = "";
+      req.searchVal = "";
+      req.category = "";
+      next();
+    }
+
+    req.searchResult = result;
+    req.searchVal = searchVal;
+    req.category = "";
+
+    next();
+  })
+};
 
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
@@ -36,8 +57,8 @@ app.get('/', (req, res) => {
   res.render('pages/index')
 })
 
-app.get('/searchJobs', (req, res) => {
-  console.log(req.query)
+app.get('/searchJobs', search, (req, res) => {
+  console.log(req.searchResult)
 })
 
 
