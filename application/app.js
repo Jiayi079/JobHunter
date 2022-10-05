@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/searchJobs', (req, res) => {
-  console.log(req.params)
+  console.log(req.query)
 })
 
 
