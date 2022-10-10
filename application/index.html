@@ -57,12 +57,41 @@
         </div>
 
 
-        <!-- Sidebar -->
         <div class="side-bar">
-            <h3 class="w3-bar-item">Menu</h3>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-            <a href="#" class="w3-bar-item w3-button">Link 3</a>
+            <div class="nav-tabs" role="ta">
+                <div class="div1">
+                    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+                </div>
+                <div class="div2">
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                </div>
+                <div class="div3">
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                </div>
+                <div class="div4">
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                </div>
+                <div class="div5">
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                </div>
+            </div>
+
+            <div class="text-bar">
+                <div id="London" class="tabcontent">
+                    <h3>London</h3>
+                    <p>London is the capital city of England.</p>
+                </div>
+
+                <div id="Paris" class="tabcontent">
+                    <h3>Paris</h3>
+                    <p>Paris is the capital of France.</p> 
+                </div>
+
+                <div id="Tokyo" class="tabcontent">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
+            </div>
         </div>
 
     </div>
