@@ -9,17 +9,18 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link rel="stylesheet" href=".homePage.css" />
+        <link rel="stylesheet" href="../css/homePage.css" />
         <title>Welcome to Job Hunter</title>
     </head>
     <body>
         <b>JOB HUNTER</b>
-        <nav>       
+
+
             <div class="body-text">
                         
                 <div class="search-box">
-                            <!Comment:Here is the filter of Nine Area filter button>
-                            <select id="selection-box" class="selection-box">
+                <!Comment:Here is the filter of Nine Area filter button>
+                        <select id="selection-box" class="selection-box">
                                 <option value="1">Artificial Intelligence and Machine Learning</option>
                                 <option value="2">Robotic Process Automation(RPA)</option>
                                 <option value="3">Edge Computing</option>
@@ -30,8 +31,9 @@
                                 <option value="8">5G</option>
                                 <option value="9">Cyber Security</option>
                             </select>
-                    <!Comment:Here is the search filter at the right of the homepage, when the user click
-                    the search bar, it will show up all as much as possible database storaged elements>
+                    
+                <!Comment:Here is the search filter at the right of the homepage, when the user click
+                the search bar, it will show up all as much as possible database storaged elements>
                     <div id="text-search" class="text-search">
                                 <form action="">
                                     <input type="search" required>
@@ -43,13 +45,91 @@
                     </div>
                 
                 </div>
+                 
+                    <!-- <div class="tab">
+                      <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+                      <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                    </div> -->
                     
+                    <!-- <div id="London" class="tabcontent">
+                      <h3>London</h3>
+                      <p>London is the capital city of England.</p>
+                    </div>
+                    
+                    <div id="Paris" class="tabcontent">
+                      <h3>Paris</h3>
+                      <p>Paris is the capital of France.</p> 
+                    </div>
+                    
+                    <div id="Tokyo" class="tabcontent">
+                      <h3>Tokyo</h3>
+                      <p>Tokyo is the capital of Japan.</p>
+                    </div> -->
+
+                    <div class="side-bar">
+                        <div class="nav-tabs" role="ta">
+                            <div class="div1">
+                                <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+                            </div>
+                            <div class="div2">
+                                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                            </div>
+                            <div class="div3">
+                                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                            </div>
+                            <div class="div4">
+                                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                            </div>
+                            <div class="div5">
+                                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                            </div>
+                        </div>
+            
+                        <div class="text-bar">
+                            <div id="London" class="tabcontent">
+                                <h3>London</h3>
+                                <p>London is the capital city of England.</p>
+                            </div>
+            
+                            <div id="Paris" class="tabcontent">
+                                <h3>Paris</h3>
+                                <p>Paris is the capital of France.</p> 
+                            </div>
+            
+                            <div id="Tokyo" class="tabcontent">
+                                <h3>Tokyo</h3>
+                                <p>Tokyo is the capital of Japan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                    function openCity(evt, cityName) {
+                      var i, tabcontent, tablinks;
+                      tabcontent = document.getElementsByClassName("tabcontent");
+                      for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                      }
+                      tablinks = document.getElementsByClassName("tablinks");
+                      for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                      }
+                      document.getElementById(cityName).style.display = "block";
+                      evt.currentTarget.className += " active";
+                    }
+                    
+                    // Get the element with id="defaultOpen" and click on it
+                    document.getElementById("defaultOpen").click();
+                    </script>
+                       
+                    </body>
                 
 
             </div>
             
 
-        </nav>
+        
 
     </body>
 </html>
