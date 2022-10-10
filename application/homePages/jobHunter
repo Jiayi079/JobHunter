@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            href=""http://fonts.googleapis.com/css?family=Poppins"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href=".homePage.css" />
+        <title>Welcome to Job Hunter</title>
+    </head>
+    <body>
+        <b>JOB HUNTER</b>
+        <nav>
+            <div class="pulldown">
+                <button><a href="#">A-Z</a></button>
+                <!Here is the filter A-Z button>
+                    <div class="Nine Area of Learning">
+                        <button>Nine Area of Learning</button>
+                    <ul>
+                        <li><a href="#">A</a></li>
+                        <li><a href="#">B</a></li>
+                        <li><a href="#">C</a></li>
+                        <li><a href="#">D</a></li>
+                        <li><a href="#">E</a></li>
+                        <li><a href="#">F</a></li>
+                        <li><a href="#">G</a></li>
+                        <li><a href="#">H</a></li>
+                    </ul>
+
+                    </div>
+                    
+                    <!Comment:Here is the filter of Nine Area filter button>
+                    <div class="Nine Area of Learning">
+                        <button>Nine Area of Learning</button>
+                    <ul>
+                        <li><a href="#">Artificial Intelligence and Machine Learning</a></li>
+                        <li><a href="#">Robotic Process Automation(RPA)</a></li>
+                        <li><a href="#">Edge Computing</a></li>
+                        <li><a href="#">Quantum Computing</a></li>
+                        <li><a href="#">Virtual Reality and Augmented Reality</a></li>
+                        <li><a href="#">Blockchain</a></li>
+                        <li><a href="#">Internet of Things(IOT)</a></li>
+                        <li><a href="#">5G</a></li>
+                        <li><a href="#">Cyber Security</a></li>
+                    </ul>
+                        
+                    </div>
+
+            </div>
+            
+
+        </nav>
+
+        <!Comment:Here is the search filter at the right of the homepage, when the user click
+        the search bar, it will show up all as much as possible database storaged elements>
+
+        <input type="text" id="areasaeINput" onkeyup="filterFunction()" placeholder="Search for names..">
+        <ul id="myUL">
+            <li><a href="#">ab</a></li>
+            <li><a href="#">arc</a></li>
+            <li><a href="#">tyr</a></li>
+            <li><a href="#">er</a></li>
+            <li><a href="#">qw</a></li>            
+        </ul>
+
+        <script>
+            function filterFunction(){
+                var input, filter, ul, li, a, i, searchValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+            for(i=0; i <li.length;i++){
+                a = li[i].getElementsByTagName("a")[0];
+                searchValue = a.textContent || a.innerText;
+                if(searchValue.toUpperCase().indexOf(filter)>-1){
+                    li[i].style.display = "";
+                }else{
+                    li[i].style.display="none";
+                }
+            }
+                
+            }
+        </script>
+    </body>
+</html>
