@@ -30,69 +30,101 @@
         </div>
     </header>
 
-    <div class="body-text">
+    <div class="search-box">
+                
+        <select id="selection-box" class="selection-box">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
 
-        <div class="search-box">
-            
-            <select id="selection-box" class="selection-box">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
+        <div id="text-search" class="text-search">
+            <form action="">
+                <input type="search" required>
+                <i class="fa fa-search"></i>
+                <a href="/application/main.js" id="clear-btn">Clear</a>
+            </form>
+        </div>
+        
+    </div>
 
-            <div id="text-search" class="text-search">
-                <form action="">
-                    <input type="search" required>
-                    <i class="fa fa-search"></i>
-                    <a href="/application/main.js" id="clear-btn">Clear</a>
-                </form>
+    <div class="side-bar">
+        <div class="nav-tabs" role="ta">
+            <div class="div1">
+                <button class="tablinks" onclick="openCity(event, 'job-title-1')" id="defaultOpen">
+                    <h1>Job Title 1</h1>
+                    <h2>Company name</h2>
+                    <h3>Location</h3>
+                    <h4>Full-time</h4>
+                </button>
             </div>
-            
+            <div class="div2">
+                <button class="tablinks" onclick="openCity(event, 'job-title-2')">
+                    <h1>Job Title 2</h1>
+                    <h2>Company name</h2>
+                    <h3>Location</h3>
+                    <h4>Full-time</h4>
+                </button>
+            </div>
+            <div class="div3">
+                <button class="tablinks" onclick="openCity(event, 'job-title-3')">
+                    <h1>Job Title 3</h1>
+                    <h2>Company name</h2>
+                    <h3>Location</h3>
+                    <h4>Full-time</h4>
+                </button>
+            </div>
+            <div class="div4">
+                <button class="tablinks" onclick="openCity(event, 'job-title-4')">
+                    <h1>Job Title 4</h1>
+                    <h2>Company name</h2>
+                    <h3>Location</h3>
+                    <h4>Full-time</h4>
+                </button>
+            </div>
+            <div class="div5">
+                <button class="tablinks" onclick="openCity(event, 'job-title-5')">
+                    <h1>Job Title 5</h1>
+                    <h2>Company name</h2>
+                    <h3>Location</h3>
+                    <h4>Full-time</h4>
+                </button>
+            </div>
         </div>
 
-
-        <div class="side-bar">
-            <div class="nav-tabs" role="ta">
-                <div class="div1">
-                    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-                </div>
-                <div class="div2">
-                    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                </div>
-                <div class="div3">
-                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-                </div>
-                <div class="div4">
-                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-                </div>
-                <div class="div5">
-                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-                </div>
+        <div class="text-bar">
+            <div id="job-title-1" class="tabcontent">
+                <h3>Job Title 1</h3>
+                <p>Description...</p>
+            </div>
+          
+            <div id="job-title-2" class="tabcontent">
+                <h3>Job Title 2</h3>
+                <p>Description...</p> 
+            </div>
+          
+            <div id="job-title-3" class="tabcontent">
+                <h3>Job Title 3</h3>
+                <p>Description...</p>
             </div>
 
-            <div class="text-bar">
-                <div id="London" class="tabcontent">
-                    <h3>London</h3>
-                    <p>London is the capital city of England.</p>
-                </div>
-
-                <div id="Paris" class="tabcontent">
-                    <h3>Paris</h3>
-                    <p>Paris is the capital of France.</p> 
-                </div>
-
-                <div id="Tokyo" class="tabcontent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.</p>
-                </div>
+            <div id="job-title-4" class="tabcontent">
+                <h3>Job Title 4</h3>
+                <p>Description...</p> 
+            </div>
+          
+            <div id="job-title-5" class="tabcontent">
+                <h3>Job Title 5</h3>
+                <p>Description...</p>
             </div>
         </div>
+    </div>
 
     </div>
 
@@ -106,80 +138,21 @@
 
 
 
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <title>CSC648-02-fa22-team04</title>
-</head>
-
-
-<body>
-    <div class="background-image"></div>
-
-    <header>
-        <div class="container">
-            <label class="logo">CSC648-02-fa22-team04</label>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </nav>
-        </div>
-
-    </header>
-
-    <section class="team-circles-sction">
-        <div class="team-container">
-            <h2 class="team-heading">Software Engineering Class SFSU</h2>
-            <p class="team-subheading">Spring 2022<br>Section 02<br>Team 04</p>
-            <div class="team-grid">
-                <div id="one" class="team-card"><img src="memberPages/image/IMG_0721.jpeg" loading="lazy" alt="" class="team-member-image">
-                    <div class="button">
-                        <a href="memberPages/yagizSaatci.html" class="team-button">Yagiz Saatci</a>
-                    </div>
-                    <div class="team-member-position">Back-end dev<br></div>
-                </div>
-                <div id="two" class="team-card"><img src="memberPages\image\WeChat Image_20220903192601.jpg" loading="lazy" alt="" class="team-member-image">
-                    <div class="button">
-                        <a href="memberPages/Jiayi_Gu.html" class="team-button">Jiayi Gu</a>
-                    </div>
-                    <div class="team-member-position">Team role: Front-end<br>Working on AWS set up and modified framework's home page.</div>
-                </div>
-                <div id="four" class="team-card"><img src="memberPages\image\IMG_2180.jpg" loading="lazy" alt="" class="team-member-image">
-                    <div class="button">
-                        <a href="memberPages/Chengkai_Yang.html" class="team-button">Chengkai Yang</a>
-                    </div>
-                    <div class="team-member-position">Team role: Front-end<br>working on member page</div>
-                </div>
-                <div id="five" class="team-card"><img src="memberPages\image\IMG_8962.jpeg" loading="lazy" alt="" class="team-member-image">
-                    <div class="button">
-                        <a href="memberPages/Julian_Manaois.html" class="team-button">Julian Manaois</a>
-                    </div>
-                    <div class="team-member-position">Team role: Database Management & GitHub check <br>working on database setup</div>
-                </div>
-                <div id="six" class="team-card"><img src="memberPages/image/IMG_8046.jpg" loading="lazy" alt="" class="team-member-image">
-                    <div class="button">
-                        <a href="memberPages/Muzaffar_Sharapov.html" class="team-button">Muzaffar Sharapov</a>
-                    </div>
-                    <div class="team-member-position">Team Lead<br>Working on documentation, checking & reading everyone's code</div>
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
+<script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
     
-</body>
-
-
-
-</html> -->
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
