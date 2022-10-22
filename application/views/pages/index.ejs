@@ -1,41 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="../css/nav_bar.css" rel="stylesheet" type="text/css">
-    <link href="../css/main_page.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <title>CSC648-02-fa22-team04</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-
-
 <body>
-
-  <header>
-    <div class="heading">
-        <label class="logo">CSC648-02-fa22-team04</label>
-        <nav>
-            <ul>
-              <li><a href="../views/pages/index.ejs">Home</a></li>
-              <li><a href="../views/login.html">Login</a></li>
-              <li><a href="../views/register.html">register</a></li>
-              <li><a href="../views/about.html">About</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
 <% var category; %> 
 <% var searchVal; %>
-
-<div class="search-box">
-    <select id="selection-box" class="selection-box" name="category" onchange="this.form(submit)">
+<div style="padding-left:16px">
+  <h2>Responsive Search Bar</h2>
+  <p>Navigation bar with a search box and a submit button inside of it.</p>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+<div class="search-container">
+  <form>
+    <input id="search" type="text" value="<%= searchVal %> " name="search" placeholder="Search..">
+    <select name="category" onchange="this.form(submit)">
       <option value="">All Categories</option>
       <option value="AI" <% if (category == "AI") { %> selected <% } %> >AI</option>
       <option value="Software Dev" <% if (category == "Software Dev") { %> selected <% } %> >Software Dev</option>
@@ -47,25 +26,10 @@
       <option value="System Architect" <% if (category == "System Architect") { %> selected <% } %> >System Architect</option>
       <option value="Video Game Dev" <% if (category == "Video Game Dev") { %> selected <% } %> >Video Game Dev</option>
     </select>
+    <button type="submit">Submit</button>
+  </form>
 
-    <div id="text-search" class="text-search">
-      <form>
-        <input id="search" type="search" value="<%= searchVal %> " name="search" placeholder="Search..">
-        <button type="submit">Submit</button>
-        <!-- <a href="/application/main.js" id="clear-btn">Clear</a> -->
-      </form>
-    </div>
-</div">
-
-<div id = "result">
-  
 </div>
-
-
-
-
-
-
 
 <script>
   $( document ).ready(function() {
@@ -74,5 +38,8 @@
    <% }  %> 
   });
 </script>
+<div id="result" >
+
+</div>
 </body>
 </html>
