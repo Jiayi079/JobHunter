@@ -11,6 +11,8 @@
   <p>Navigation bar with a search box and a submit button inside of it.</p>
   <p>Resize the browser window to see the responsive effect.</p>
 </div>
+
+<!-- Dont touch this part -->
 <div class="search-container">
   <form>
     <input id="search" type="text" value="<%= searchVal %> " name="search" placeholder="Search..">
@@ -28,8 +30,8 @@
     </select>
     <button type="submit">Submit</button>
   </form>
-
 </div>
+
 
 <script>
   $( document ).ready(function() {
@@ -38,6 +40,8 @@
    <% }  %> 
   });
 </script>
+
+<!-- Results will be shown here add class tag to this div-->
 <div id="result" >
 
 </div>
