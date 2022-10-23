@@ -35,6 +35,7 @@
       var altertext = document.createTextNode("<%= searchResult[i]['Comment'] %>")
       var text = document.createTextNode("<%= searchResult[i]['ID'] %>. <%= searchResult[i]['Name'] %>");
       tag.appendChild(text);
+      tag.appendChild(document.createNode('br'))
       tag.appendChild(altertext);
       var element = document.getElementById("result");
       element.appendChild(tag);
