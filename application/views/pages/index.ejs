@@ -32,7 +32,7 @@
   $( document ).ready(function() {
     <% for (var i = 0; i < searchResult.length; i++) { %>
       document.getElementById('result').innerHTML += '<div id="<%= searchResult[i]['ID'] %>"> </div>'
-      document.getElementById('<%= searchResult[i]['ID'] %>') += '<p> <%= searchResult[i]['ID'] %>. <%= searchResult[i]['Name'] %>'
+      document.getElementById('<%= searchResult[i]['ID'] %>') += '<p> <%= searchResult[i]['ID'] %>. <%= searchResult[i]['Name'] %> </p>'
    <% }  %> 
   });
 </script>
