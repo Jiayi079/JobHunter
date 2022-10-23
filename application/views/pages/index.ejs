@@ -34,7 +34,7 @@
       var tag = document.createElement("p");
       var text = document.createTextNode("<%= searchResult[i]['ID'] %>. <%= searchResult[i]['Name'] %>");
       tag.appendChild(text);
-      tag.appendChild(document.createNode('br'))
+      tag.appendChild(document.createElement('br'));
       tag.appendChild(altertext);
       var element = document.getElementById("result");
       element.appendChild(tag);
