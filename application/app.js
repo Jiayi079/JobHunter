@@ -43,7 +43,7 @@ function search(req, res, next) {
       next();
     })
   } else if(searchVal != '' && category == '') {
-    var query = "SELECT * FROM Posting WHERE Name LIKE ? OR Comment LIKE ?";
+    query = "SELECT * FROM Posting WHERE Name LIKE ? OR Comment LIKE ?";
     database.query(query, [sqlSearchVal, sqlSearchVal], (err, result) => {
       console.log(query)
       if (err) {
@@ -126,7 +126,7 @@ app.post('/submit',function(req,res){
   database.connect(function(err) {
   if (err) throw err;
   var sql = "INSERT INTO postData (Comment) VALUES ('"+Comment+"')";
-  data.query(sql, function (err, result) {
+  database.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 job desc inserted");
      res.end();
@@ -167,7 +167,7 @@ app.post('/createAccount',function(req,res){
   var password = req.body.password;
 
   var sql = "INSERT INTO userData (username,name,email,password) VALUES ('"+username+"', '"+name+"','"+email+"', '"+password+"')";
-  data.query(sql, function (err, result) {
+  database.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 user inserted");
     res.end();
