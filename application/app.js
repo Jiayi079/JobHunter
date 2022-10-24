@@ -99,8 +99,9 @@ app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
 app.use(express.static('application'))
-app.use('css', express.static(__dirname, + 'application/css'))
 app.use('css', express.static(__dirname, + 'application/memberPages'))
+app.use('css', express.static(__dirname, + 'application/css'))
+app.use('css', express.static(__dirname, + 'application/views/pages'))
 
 app.use(express.json())
 app.use(express.urlencoded())
