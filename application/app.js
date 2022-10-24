@@ -170,7 +170,7 @@ app.post('/createAccount',function(req,res){
   database.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 user inserted");
-    res.end();
+    res.status(204).send();
   });
   
   });
