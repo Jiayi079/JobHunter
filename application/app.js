@@ -96,15 +96,13 @@ function search(req, res, next) {
   }
 };
 // create user 
-app.post('/post',function(req,res){
+app.post('/createAccount',function(req,res){
 
   var username = req.body.username;
   var name = req.body.name;
   var email = req.body.email;
   var password = req.body.password;
 
-  database.connect(function(err) {
-  if (err) throw err;
   var sql = "INSERT INTO userData (username,name,email,password) VALUES ('"+username+"', '"+name+"','"+email+"', '"+password+"')";
   data.query(sql, function (err, result) {
     if (err) throw err;
@@ -112,7 +110,6 @@ app.post('/post',function(req,res){
      res.end();
   });
   });
-})
 
 // create post (everything but description)
 app.post('/post',function(req,res){
