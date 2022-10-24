@@ -141,11 +141,11 @@ app.post('/createAccount',function(req,res){
 app.get('/users', function(req, res) {
   var query = "SELECT * From userData"
 
-  database.query(query, (err, result) {
+  database.query(query, function (err, result) {
     if (err) throw err;
     res.json(result);
-  })
-})
+  });
+});
 
 app.get('/jobs', (req, res) => {
   res.send(201)
