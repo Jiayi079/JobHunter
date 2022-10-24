@@ -97,43 +97,6 @@ function search(req, res, next) {
 };
 
 
-// create post (everything but description)
-app.post('/post',function(req,res){
-
-  var name = req.body.name;
-  var location = req.body.location;
-  var email = req.body.email;
-  var companyname = req.body.companyname;
-  var salary = req.body.salary;
-
-  database.connect(function(err) {
-  if (err) throw err;
-  var sql = "INSERT INTO postData (name,location,email,companyname,salary) VALUES ('"+name+"', '"+location+"','"+email+"', '"+companyname+"', '"+salary+"')";
-  data.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("1 job post inserted");
-     res.end();
-  });
-  });
-})
-
-// create post (description)
-app.post('/submit',function(req,res){
-
-  var Comment = req.body.Comment;
-  
-
-  database.connect(function(err) {
-  if (err) throw err;
-  var sql = "INSERT INTO postData (Comment) VALUES ('"+Comment+"')";
-  database.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("1 job desc inserted");
-     res.end();
-  });
-  });
-})
-
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
@@ -175,6 +138,14 @@ app.post('/createAccount',function(req,res){
   
   });
 
+app.get('/users', function(req, res) {
+  var query = "SELECT * From userData"
+
+  database.query(query, (err, result) {
+    if (err) throw err;
+    res.json(result);
+  })
+})
 
 app.get('/jobs', (req, res) => {
   res.send(201)
