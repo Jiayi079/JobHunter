@@ -1,0 +1,183 @@
+<!-- <!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>JobBoard</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/post_job.css" rel="stylesheet" type="text/css">
+    </head>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/nav_bar.css" rel="stylesheet" type="text/css">
+    <link href="../css/post_job.css" rel="stylesheet" type="text/css">
+    <!-- <link href="../css/login.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="../views/css/post_job_new.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>CSC648-02-fa22-team04</title>
+</head>
+
+<header>
+    <div class="heading">
+        <label class="logo">CSC648-02-fa22-team04</label>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../views/login.html">Login</a></li>
+                <li><a href="../views/register.html">register</a></li>
+                <li><a href="../views/about.html">About</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<body>
+    <!-- <div class="background-image"></div> -->
+
+    <div class="container">
+        <form class="form" id="createAccount">
+            <h1 class="form_title">JOB POSTING</h1>
+            <div class="form_message form_message-error"></div>
+            <div class="form_input-group">
+                <label for="job-title">Job Title:</label>
+                <input type="text" class="form_input" autofocus placeholder="Product Designer">
+                <div class="form_input-error-message"></div>
+            </div>
+
+            <div class="form_input-group">
+                <label for="location">Location:</label>
+                <input type="text" class="form_input" autofocus placeholder="e.g. San Francisco">
+                <div class="form_input-error-message"></div>
+            </div>
+
+            <div class="form_input-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form_input" autofocus placeholder="you@yourdomain.com">
+                <div class="form_input-error-message"></div>
+            </div>
+
+            <div class="form_input-group">
+                <label for="company-name">Company Name:</label>
+                <input type="text" class="form_input" autofocus placeholder="Enter the company name">
+                <div class="form_input-error-message"></div>
+            </div>
+
+            <div class="form_input-group">
+                <label for="salary">Salary</label>
+                <input type="text" class="form_input" autofocus placeholder="e.g. 5000">
+                <div class="form_input-error-message"></div>
+            </div>
+
+            <!-- <div class="form_input-group"> -->
+                <!-- <label for="job-title">Job Description:</label> -->
+                <!-- <textarea rows="5" cols="10" style = "width:150px;height: 17px;"> -->
+                    <!-- Enter the related content here... -->
+                <!-- </textarea> -->
+                
+            <!-- </div> -->
+            <div class="editor">
+                <label for="job-description">Job Description</label>
+                <div class="row">
+                    <div class="col1">
+                        <div class="first box">
+                            <input type="number" id="font-size" min="1" max="100" value="16" onchange="f1(this)">
+                        </div>
+                        <div class="second box">
+                            <button type="button" onclick="f2(this)">
+                                <i class="fa-solid fa-bold"></i>
+                            </button>
+                            <button type="button" onclick="f3(this)">
+                                <i class="fa-solid fa-italic"></i>
+                            </button>
+                            <button type="button" onclick="f4(this)">
+                                <i class="fa-solid fa-underline"></i>
+                            </button>
+                        </div>
+                        <div class="third box">
+                            <button type="button" onclick="f5(this)">
+                                <i class="fa-solid fa-align-left"></i>
+                            </button>
+                            <button type="button" onclick="f6(this)">
+                                <i class="fa-solid fa-align-center"></i>
+                            </button>
+                            <button type="button" onclick="f7(this)">
+                                <i class="fa-solid fa-align-right"></i>
+                            </button>
+                        </div>
+                        <div class="fourth box">
+                            <button type="button" onclick="f8(this)">
+                                aA
+                            </button>
+                            <button type="button" onclick="f9(this)">
+                                <i class="fa-solid fa-text-slash"></i>
+                            </button>
+                            <input type="color" onchange="f10(this)">
+                        </div>
+                        <br>
+                        <div class="col">
+                            <textarea id="textarea" placeholder="Your text here"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selectdiv">
+                <label for="job_type">Job Type</label>
+                <label>
+                    <select>
+                        <option selected> Select Box </option>
+                        <option>Full-Time Job</option>
+                        <option>Internship</option>
+                        <option>Part-Time</option>
+                    </select>
+                </label>
+            </div>
+
+            <button class="form_button" type="submit">POST</button>
+            <!-- <p class="form_text">
+                <a href="" class="form_link">Forgot your password?</a>
+            </p>
+            <p class="form_text">
+                <a class="form_link" href="./login.html" id="linkLogin">Already have an account? Sign in</a>
+            </p> -->
+        </form>
+
+    </div>
+
+    <script src="../main.js"></script>
+    
+</body>
+
+</html>
+
+<!-- Include the Quill library -->
+<!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script>
+$(document).ready(function() {
+    var quill = new Quill('#editor-container', {
+        modules: {
+            toolbar: '#toolbar-container'
+        },
+        placeholder: 'Compose an epic...',
+        theme: 'snow'
+    });
+        
+    // Enable all tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+        
+    // Can control programmatically too
+    $('.ql-italic').mouseover();
+    setTimeout(function() {
+        $('.ql-italic').mouseout();
+    }, 2500);
+});
+</script> -->
