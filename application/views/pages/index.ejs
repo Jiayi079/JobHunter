@@ -39,7 +39,52 @@
    <% }  %> 
   });
 </script>
+<script src="../main.js"></script>
+    <!-- <div class="background-image"></div> -->
 
+    <div class="container">
+        <form class="form" id="createAccount" action="/post">
+            <h1 class="form_title">Create Account</h1>
+            <div class="form_message form_message-error"></div>
+            <div class="form_input-group">
+                <input type="text" class="form_input" id="username" autofocus placeholder="Username">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="form_input-group">
+                <input type="text" class="form_input" id="name" autofocus placeholder="Name">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="form_input-group">
+                <input type="text" class="form_input" id="email" autofocus placeholder="Email Address">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="form_input-group">
+                <input type="password" class="form_input" id="password" autofocus placeholder="Password">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="form_input-group">
+                <input type="password" class="form_input" autofocus placeholder="Confirm password">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="radio-button">
+                <input type="radio" id="html" name="fav-language" value="HTML">
+                <label for="student">Student</label>
+                <input type="radio" id="html" name="fav-language" value="HTML">
+                <label for="student">Employee</label>
+            </div>
+            <button class="form_button" type="submit">Continue</button>
+            <p class="form_text">
+                <a href="" class="form_link">Forgot your password?</a>
+            </p>
+            <p class="form_text">
+                <a class="form_link" href="./login.html" id="linkLogin">Already have an account? Sign in</a>
+            </p>
+        </form>
+
+    </div>
+
+    
+    
 <!-- Results will be shown here add class tag to this div-->
 <div class="result" id="result" >
 
