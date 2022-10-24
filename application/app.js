@@ -4,6 +4,7 @@ const path = require('path')
 const port = 3000
 const mysql = require('mysql')
 const { nextTick } = require('process')
+const { data } = require('jquery')
 
 const database = mysql.createConnection({
   host: 'localhost',
@@ -42,7 +43,7 @@ function search(req, res, next) {
       next();
     })
   } else if(searchVal != '' && category == '') {
-    query = "SELECT * FROM Posting WHERE Name LIKE ? OR Comment LIKE ?";
+    var query = "SELECT * FROM Posting WHERE Name LIKE ? OR Comment LIKE ?";
     database.query(query, [sqlSearchVal, sqlSearchVal], (err, result) => {
       console.log(query)
       if (err) {
@@ -94,7 +95,24 @@ function search(req, res, next) {
     })
   }
 };
+// create user 
+app.post('/post',function(req,res){
 
+  var username = req.body.username;
+  var name = req.body.name;
+  var email = req.body.email;
+  var password = req.body.password;
+
+  database.connect(function(err) {
+  if (err) throw err;
+  var sql = "INSERT INTO userData (username,name,email,password) VALUES ('"+username+"', '"+name+"','"+email+"', '"+password+"')";
+  data.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 user inserted");
+     res.end();
+  });
+  });
+})
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
