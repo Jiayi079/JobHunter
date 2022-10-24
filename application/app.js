@@ -95,21 +95,7 @@ function search(req, res, next) {
     })
   }
 };
-// create user 
-app.post('/createAccount',function(req,res){
 
-  var username = req.body.username;
-  var name = req.body.name;
-  var email = req.body.email;
-  var password = req.body.password;
-
-  var sql = "INSERT INTO userData (username,name,email,password) VALUES ('"+username+"', '"+name+"','"+email+"', '"+password+"')";
-  data.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("1 user inserted");
-    res.end();
-  });
-  });
 
 // create post (everything but description)
 app.post('/post',function(req,res){
@@ -172,6 +158,22 @@ app.get('/', search, (req, res) => {
   console.log(req.searchResult); 
 })
 
+// create user 
+app.post('/createAccount',function(req,res){
+
+  var username = req.body.username;
+  var name = req.body.name;
+  var email = req.body.email;
+  var password = req.body.password;
+
+  var sql = "INSERT INTO userData (username,name,email,password) VALUES ('"+username+"', '"+name+"','"+email+"', '"+password+"')";
+  data.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 user inserted");
+    res.end();
+  });
+  
+  });
 
 
 app.get('/jobs', (req, res) => {
