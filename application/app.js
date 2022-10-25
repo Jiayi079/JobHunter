@@ -106,7 +106,9 @@ passport.use(new passportLocal.Strategy({
   try {
     const query = "SELECT * From userData WHERE email = ?"
     const userFound = await database.query(query, [email])
-
+    console.log(userFound)
+    console.log(userFound[0].password)
+    console.log(userFound[0])
     if ( userFound[0] && password == userFound[0].password) {
       console.log("Success")
       done(null,userFound)
