@@ -13,16 +13,13 @@ const session = require('express-session')
 const flash = require('express-flash')
 const MySQLStore = require('express-mysql-session')(session)
 
-const options = {
+const database = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'Root@123',
   database: 'mysql',
-  createDatabaseTable: true
-};
+});
 
-const database = mysql.createConnection(options) 
-const sessionStore = new MySQLStore({}, database )
 database.connect((err) => {
   if (err) throw err;
   console.log('Connected');
