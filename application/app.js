@@ -8,7 +8,7 @@ const { data } = require('jquery')
 const passport = require('passport')
 const passportLocal = require('passport-local')
 const { rejects } = require('assert')
-const session = require('express-session')
+var session = require('express-session')
 
 const database = mysql.createConnection({
   host: 'localhost',
