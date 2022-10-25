@@ -122,14 +122,14 @@ app.get('/', search, (req, res) => {
 })
 
 // create user 
-app.post('/createAccount',function(req,res){
+app.post('/users',function(req,res){
 
   var username = req.body.username;
   var name = req.body.name;
   var email = req.body.email;
   var password = req.body.password;
 
-  var sql = "INSERT INTO userData (username,name,email,password) VALUES ('"+username+"', '"+name+"','"+email+"', '"+password+"')";
+  var sql = "INSERT INTO userData (username,password) VALUES ('"+username+"', '"+password+"')";
   database.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 user inserted");
