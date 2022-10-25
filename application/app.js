@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -8,7 +12,8 @@ const { data } = require('jquery')
 const passport = require('passport')
 const passportLocal = require('passport-local')
 const { rejects } = require('assert')
-var session = require('express-session')
+const session = require('express-session')
+const flash = require('express-flash')
 
 const database = mysql.createConnection({
   host: 'localhost',
@@ -111,6 +116,12 @@ query1Promise = (email) => {
     })
   })
 }
+app.use(flash())
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
 passport.use(new passportLocal.Strategy({
   usernameField: 'email'
 }, async (email, password, done) => {
@@ -137,7 +148,7 @@ app.use('css', express.static(__dirname, + 'application/views/pages'))
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(passport.initialize())
-
+app.use(passport.session())
 
 // Route handler that sends the response
 
