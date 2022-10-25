@@ -139,7 +139,9 @@ app.post('/register',function(req,res){
 
   var sql = "INSERT INTO userData (username,password,email) VALUES ('"+username+"', '"+password+"', '"+email+"')";
   database.query(sql, function (err, result) {
-    if (err) throw err;
+    if (err) {
+      return res.send(err);
+    }
     console.log("1 user inserted");
     res.status(204).send()  ;
   });
