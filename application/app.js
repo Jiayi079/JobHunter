@@ -137,8 +137,10 @@ passport.use(new passportLocal.Strategy({
     if ( userFound[0] && password == userFound[0].password) {
       console.log("Success")
       done(null,userFound)
+    } else if (userFound == null) {
+      done(null, false, { message: 'No user with that email'})
     } else {
-      done(null, false)
+      done(null, false, { message: 'Password incorrect'})
     }
   } catch(error) {
     done(error)
@@ -180,13 +182,11 @@ app.get('/login', (req, res) => {
   res.render('pages/login');
 })
 
-app.post('/login', passport.authenticate('local'), async (req, res) => {
-  try {
-    console.log(req.user)
-  } catch(err) {
-    console.log(err)
-  }
-})
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+  failureFlash: true
+}))
 // create user 
 app.post('/register',function(req,res){
 
