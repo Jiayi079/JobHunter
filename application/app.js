@@ -177,13 +177,16 @@ app.get('/', search, (req, res) => {
 })
 
 
-
 app.get('/register', (req, res) => {
   res.render('pages/register');
 })
 
 app.get('/login', (req, res) => {
   res.render('pages/login');
+})
+
+app.get('/post', (req, res) => {
+  res.render('pages/post');
 })
 
 // Login authentication
@@ -193,6 +196,7 @@ app.post('/login', passport.authenticate('local', {
   failureRedirect: '/login',
   failureFlash: true
 }))
+
 // Register new user 
 
 app.post('/register',function(req,res){
@@ -221,6 +225,26 @@ app.get('/users', function(req, res) {
   });
 });
 
+// Create new post 
+
+app.post('/post',function(req,res){
+
+  var name = req.body.name;
+  var location = req.body.location;
+  var companyname = req.body.companyname;
+  var salary = req.body.salary;
+  var comment = req.body.comment
+
+  var sql = "INSERT INTO Posting (name,location,companyname,salary,comment) VALUES ('"+name+"', '"+location+"', '"+companyname+"','"+salary+"','"+comment+"')";
+  database.query(sql, function (err, result) {
+    if (err) {
+      return res.send(err);
+    }
+    console.log("1 post inserted");
+    res.redirect('/')  ;
+  });
+  
+  });
 app.get('/about', (req, res) => {
   res.render('pages/about');
 })
