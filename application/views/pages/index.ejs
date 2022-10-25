@@ -1,7 +1,13 @@
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/nav_bar.css" rel="stylesheet" type="text/css">
+<link href="../css/login.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/application/css/test.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>CSC648-02-fa22-team04</title>
 </head>
 <body>
 <% var category; %> 
@@ -39,41 +45,6 @@
    <% }  %> 
   });
 </script>
-<script src="../main.js"></script>
-    <!-- <div class="background-image"></div> -->
-
-    <div class="container">
-        <form class="form" id="createAccount" action="/users" method="POST">
-            <h1 class="form_title">Create Account</h1>
-            <div class="form_message form_message-error"></div>
-            <div class="form_input-group">
-                <input type="text" class="form_input" name="username" autofocus placeholder="Username">
-                <div class="form_input-error-message"></div>
-            </div>
-            <div class="form_input-group">
-                <input type="password" class="form_input" name="password" autofocus placeholder="Password">
-                <div class="form_input-error-message"></div>
-            </div>
-            <div class="form_input-group">
-                <input type="password" class="form_input" autofocus placeholder="Confirm password">
-                <div class="form_input-error-message"></div>
-            </div>
-            <div class="radio-button">
-                <input type="radio" id="html" name="fav-language" value="HTML">
-                <label for="student">Student</label>
-                <input type="radio" id="html" name="fav-language" value="HTML">
-                <label for="student">Employee</label>
-            </div>
-            <button class="form_button" type="submit">Continue</button>
-            <p class="form_text">
-                <a href="" class="form_link">Forgot your password?</a>
-            </p>
-            <p class="form_text">
-                <a class="form_link" href="./login.html" id="linkLogin">Already have an account? Sign in</a>
-            </p>
-        </form>
-
-    </div>
 
     
     
