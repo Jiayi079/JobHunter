@@ -120,6 +120,7 @@ query1Promise = (email) => {
 app.use(flash())
 app.use(session({
   store: sessionStore,
+  secret: 'tea',
   resave: false,
   saveUninitialized: false
 }))
