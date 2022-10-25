@@ -112,6 +112,8 @@ passport.use(new passportLocal.Strategy({
       }
       userFound = result[0]
     })
+    console.log(password)
+    console.log(userFound.password)
     if ( userFound && password === userFound.password) {
       done(null,userFound)
     } else {
