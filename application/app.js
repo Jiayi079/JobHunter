@@ -115,7 +115,7 @@ passport.use(new passportLocal.Strategy({
     } else {
       done(null, false)
     }
-  } catch {
+  } catch(error) {
     done(error)
   }
 }))
