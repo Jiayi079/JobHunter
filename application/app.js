@@ -113,6 +113,7 @@ passport.use(new passportLocal.Strategy({
       userFound = result[0]
     })
     console.log(password)
+    console.log(userFound)
     console.log(userFound.password)
     console.log(userFound.email)
     if ( userFound && password === userFound.password) {
