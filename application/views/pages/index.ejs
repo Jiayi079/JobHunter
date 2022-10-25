@@ -31,18 +31,20 @@
 <div class="search-container">
   <form>
     <input class="form_input" id="search" type="text" value="<%= searchVal %> " name="search" placeholder="Search..">
-    <select name="category" onchange="this.form(submit)">
-      <option value="">All Categories</option>
-      <option value="AI" <% if (category == "AI") { %> selected <% } %> >AI</option>
-      <option value="Software Dev" <% if (category == "Software Dev") { %> selected <% } %> >Software Dev</option>
-      <option value="Web Dev" <% if (category == "Web Dev") { %> selected <% } %> >Web Dev</option>
-      <option value="UX Designer" <% if (category == "UX Designer") { %> selected <% } %> >UX Designer</option>
-      <option value="Mobile App" <% if (category == "Mobile App") { %> selected <% } %> >Mobile App</option>
-      <option value="IT" <% if (category == "IT") { %> selected <% } %> >IT</option>
-      <option value="Security" <% if (category == "Security") { %> selected <% } %> >Security</option>
-      <option value="System Architect" <% if (category == "System Architect") { %> selected <% } %> >System Architect</option>
-      <option value="Video Game Dev" <% if (category == "Video Game Dev") { %> selected <% } %> >Video Game Dev</option>
-    </select>
+    <div class="custom-select" style="width:200px;">
+      <select name="category" onchange="this.form(submit)">
+        <option value="">All Categories</option>
+        <option value="AI" <% if (category == "AI") { %> selected <% } %> >AI</option>
+        <option value="Software Dev" <% if (category == "Software Dev") { %> selected <% } %> >Software Dev</option>
+        <option value="Web Dev" <% if (category == "Web Dev") { %> selected <% } %> >Web Dev</option>
+        <option value="UX Designer" <% if (category == "UX Designer") { %> selected <% } %> >UX Designer</option>
+        <option value="Mobile App" <% if (category == "Mobile App") { %> selected <% } %> >Mobile App</option>
+        <option value="IT" <% if (category == "IT") { %> selected <% } %> >IT</option>
+        <option value="Security" <% if (category == "Security") { %> selected <% } %> >Security</option>
+        <option value="System Architect" <% if (category == "System Architect") { %> selected <% } %> >System Architect</option>
+        <option value="Video Game Dev" <% if (category == "Video Game Dev") { %> selected <% } %> >Video Game Dev</option>
+      </select>
+    </div>
     <button class="form_button" type="submit">Submit</button>
   </form>
 </div>
