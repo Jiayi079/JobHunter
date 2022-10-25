@@ -154,7 +154,7 @@ app.get('/login', (req, res) => {
   res.render('pages/login');
 })
 
-app.post('/login', authenticate('local'), (req, res) => {
+app.post('/login', passport.authenticate('local'), (req, res) => {
   res.redirect('/')
 })
 // create user 
