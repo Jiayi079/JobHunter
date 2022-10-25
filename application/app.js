@@ -115,6 +115,12 @@ query1Promise = (email) => {
   })
 }
 
+app.use(flash())
+app.use(session({
+  secret: 'tee',
+  resave: false,
+  saveUninitialized: false
+}))
 passport.use(new passportLocal.Strategy({
   usernameField: 'email'
 }, async (email, password, done) => {
@@ -141,6 +147,7 @@ app.use('css', express.static(__dirname, + 'application/views/pages'))
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(passport.initialize())
+app.use(passport.session())
 
 
 // Route handler that sends the response
@@ -185,7 +192,7 @@ app.post('/register',function(req,res){
       return res.send(err);
     }
     console.log("1 user inserted");
-    res.status(204).send()  ;
+    res.redirect('/login')  ;
   });
   
   });
