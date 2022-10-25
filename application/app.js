@@ -18,7 +18,7 @@ const database = mysql.createConnection({
   user: 'root',
   password: 'Root@123',
   database: 'mysql',
-});
+})g;
 
 database.connect((err) => {
   if (err) throw err;
@@ -114,13 +114,7 @@ query1Promise = (email) => {
     })
   })
 }
-app.use(flash())
-app.use(session({
-  store: sessionStore,
-  secret: 'tea',
-  resave: false,
-  saveUninitialized: false
-}))
+
 passport.use(new passportLocal.Strategy({
   usernameField: 'email'
 }, async (email, password, done) => {
