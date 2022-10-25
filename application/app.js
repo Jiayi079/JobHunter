@@ -114,9 +114,9 @@ passport.use(new passportLocal.Strategy({
   usernameField: 'email'
 }, async (email, password, done) => {
   try {
-    const userFound = await query1Promise
+    const userFound = await query1Promise()
     console.log(userFound)
-    if ( userFound[0] && password == userFound[0].password) {
+    if ( userFound && password == userFound.password) {
       console.log("Success")
       done(null,userFound)
     } else {
