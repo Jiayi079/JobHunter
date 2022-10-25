@@ -134,11 +134,10 @@ app.get('/login', (req, res) => {
 app.post('/register',function(req,res){
 
   var username = req.body.username;
-  var name = req.body.name;
   var email = req.body.email;
   var password = req.body.password;
 
-  var sql = "INSERT INTO userData (username,password) VALUES ('"+username+"', '"+password+"')";
+  var sql = "INSERT INTO userData (username,password) VALUES ('"+username+"', '"+password+"', '"+email+"')";
   database.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 user inserted");
