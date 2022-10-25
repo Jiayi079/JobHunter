@@ -1,6 +1,3 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
 
 const express = require('express')
 const app = express()
@@ -14,14 +11,17 @@ const passportLocal = require('passport-local')
 const { rejects } = require('assert')
 const session = require('express-session')
 const flash = require('express-flash')
+const MySQLStore = require('express-mysql-session')(session)
 
-const database = mysql.createConnection({
+const options = {
   host: 'localhost',
   user: 'root',
   password: 'Root@123',
   database: 'mysql'
-});
+};
 
+const database = mysql.createConnection(options) 
+const sessionStore = new MySQLStore({}, database)
 database.connect((err) => {
   if (err) throw err;
   console.log('Connected');
@@ -118,7 +118,9 @@ query1Promise = (email) => {
 }
 app.use(flash())
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  key: "sessin_cookie_name",
+  secret: "session_cookie_secret",
+  store: sessionStore,
   resave: false,
   saveUninitialized: false
 }))
