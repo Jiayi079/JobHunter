@@ -100,9 +100,9 @@ function search(req, res, next) {
   }
 };
 
-query1Promise = () => {
+query1Promise = (email) => {
   return new Promise((resolve, reject) => {
-    database.query(query1, (err, results) => {
+    database.query(query1, [email] , (err, results) => {
       if (err) {
         return reject(err)
       }
@@ -114,7 +114,7 @@ passport.use(new passportLocal.Strategy({
   usernameField: 'email'
 }, async (email, password, done) => {
   try {
-    const userFound = await query1Promise()
+    const userFound = await query1Promise(email)
     console.log(userFound)
     if ( userFound && password == userFound.password) {
       console.log("Success")
