@@ -22,6 +22,7 @@ database.connect((err) => {
   database.query('Use sys');
 })
 
+const query1 = "SELECT * From userData WHERE email = ?"
 function search(req, res, next) {
   var searchVal = req.query.search == undefined ? '' : req.query.search.trim();
   console.log(searchVal)
@@ -99,13 +100,21 @@ function search(req, res, next) {
   }
 };
 
-
+query1Promise = () => {
+  return new Promise((resolve, reject) => {
+    database.query(query1, (err, results) => {
+      if (err) {
+        return reject(err)
+      }
+      return resolve(results)
+    })
+  })
+}
 passport.use(new passportLocal.Strategy({
   usernameField: 'email'
 }, async (email, password, done) => {
   try {
-    const query = "SELECT * From userData WHERE email = ?"
-    const userFound = await database.query(query, [email])
+    const userFound = await query1Promise
     console.log(userFound)
     if ( userFound[0] && password == userFound[0].password) {
       console.log("Success")
