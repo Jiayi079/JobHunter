@@ -30,7 +30,7 @@
 <!-- Dont touch this part -->
 <div class="search-container">
   <form>
-    <input id="search" type="text" value="<%= searchVal %> " name="search" placeholder="Search..">
+    <input class="form_input" id="search" type="text" value="<%= searchVal %> " name="search" placeholder="Search..">
     <select name="category" onchange="this.form(submit)">
       <option value="">All Categories</option>
       <option value="AI" <% if (category == "AI") { %> selected <% } %> >AI</option>
