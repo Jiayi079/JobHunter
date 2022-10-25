@@ -17,11 +17,12 @@ const options = {
   host: 'localhost',
   user: 'root',
   password: 'Root@123',
-  database: 'mysql'
+  database: 'mysql',
+  createDatabaseTable: true
 };
 
 const database = mysql.createConnection(options) 
-const sessionStore = new MySQLStore({}, database)
+const sessionStore = new MySQLStore({}, database )
 database.connect((err) => {
   if (err) throw err;
   console.log('Connected');
@@ -118,8 +119,6 @@ query1Promise = (email) => {
 }
 app.use(flash())
 app.use(session({
-  key: "sessin_cookie_name",
-  secret: "session_cookie_secret",
   store: sessionStore,
   resave: false,
   saveUninitialized: false
