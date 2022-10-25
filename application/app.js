@@ -26,7 +26,7 @@ const sessionStore = new MySQLStore({}, database )
 database.connect((err) => {
   if (err) throw err;
   console.log('Connected');
-  database.query('Use sys');
+  database.query('Use job');
 })
 
 const query1 = "SELECT * From userData WHERE email = ?"
