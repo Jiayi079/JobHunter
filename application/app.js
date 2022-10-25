@@ -129,6 +129,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+
+// Login authentication
+
 passport.use(new passportLocal.Strategy({
   usernameField: 'email'
 }, async (email, password, done) => {
@@ -183,12 +186,15 @@ app.get('/login', (req, res) => {
   res.render('pages/login');
 })
 
+// Login authentication
+
 app.post('/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/login',
   failureFlash: true
 }))
-// create user 
+// Register new user 
+
 app.post('/register',function(req,res){
 
   var username = req.body.username;
