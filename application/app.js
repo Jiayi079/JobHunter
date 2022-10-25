@@ -8,6 +8,7 @@ const { data } = require('jquery')
 const passport = require('passport')
 const passportLocal = require('passport-local')
 const { rejects } = require('assert')
+const session = require('express-session')
 
 const database = mysql.createConnection({
   host: 'localhost',
@@ -160,8 +161,12 @@ app.get('/login', (req, res) => {
   res.render('pages/login');
 })
 
-app.post('/login', passport.authenticate('local'), (req, res) => {
-  res.redirect('/')
+app.post('/login', passport.authenticate('local'), async (req, res) => {
+  try {
+    console.log(req.user)
+  } catch(err) {
+    console.log(err)
+  }
 })
 // create user 
 app.post('/register',function(req,res){
