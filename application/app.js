@@ -7,6 +7,7 @@ const { nextTick } = require('process')
 const { data } = require('jquery')
 const passport = require('passport')
 const passportLocal = require('passport-local')
+const { rejects } = require('assert')
 
 const database = mysql.createConnection({
   host: 'localhost',
@@ -101,7 +102,23 @@ function search(req, res, next) {
 
 passport.use(new passportLocal.Strategy({
   usernameField: 'email'
-}, async () => {}))
+}, async (email, password, done) => {
+  try {
+    const query = "SELECT 1 From userData WHERE email = ?"
+    const [userFound] = database.query(query, [email], (err, result) => {
+      if (err) {
+        console.log(err)
+      }
+    })
+    if ( userFound && password === userFound.password) {
+      done(null,userFound)
+    } else {
+      done(null, false)
+    }
+  } catch {
+    done(error)
+  }
+}))
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
@@ -135,6 +152,10 @@ app.get('/register', (req, res) => {
 
 app.get('/login', (req, res) => {
   res.render('pages/login');
+})
+
+app.post('/login', authenticate('local'), (req, res) => {
+  res.redirect('/')
 })
 // create user 
 app.post('/register',function(req,res){
