@@ -137,7 +137,7 @@ app.post('/register',function(req,res){
   var email = req.body.email;
   var password = req.body.password;
 
-  var sql = "INSERT INTO userData (username,password) VALUES ('"+username+"', '"+password+"', '"+email+"')";
+  var sql = "INSERT INTO userData (username,password,email) VALUES ('"+username+"', '"+password+"', '"+email+"')";
   database.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 user inserted");
