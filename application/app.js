@@ -110,7 +110,9 @@ passport.use(new passportLocal.Strategy({
       if (err) {
         console.log(err)
       }
-      userFound = result;
+      Object.keys(result).forEach(function(key)) {
+        var userFound = result[key]
+      }
       console.log(userFound.email)
       console.log(userFound.password)
     })
