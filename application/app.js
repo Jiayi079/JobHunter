@@ -121,8 +121,17 @@ app.get('/', search, (req, res) => {
   console.log(req.searchResult); 
 })
 
+
+
+app.get('/register', (req, res) => {
+  res.render('register.ejs');
+})
+
+app.get('/login', (req, res) => {
+  res.render('login.ejs');
+})
 // create user 
-app.post('/users',function(req,res){
+app.post('/register',function(req,res){
 
   var username = req.body.username;
   var name = req.body.name;
@@ -147,15 +156,7 @@ app.get('/users', function(req, res) {
   });
 });
 
-app.get('/jobs', (req, res) => {
-  res.send(201)
-})
 
-app.post('/jobs', (req, res) => {
-  console.log(req.body)
-  postListng.push(req.body)
-  res.send(201)
-})
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
