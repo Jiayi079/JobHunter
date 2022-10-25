@@ -104,6 +104,14 @@ function search(req, res, next) {
   }
 };
 
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
 query1Promise = (email) => {
   return new Promise((resolve, reject) => {
     database.query(query1, [email] , (err, results) => {
