@@ -5,6 +5,8 @@ const port = 3000
 const mysql = require('mysql')
 const { nextTick } = require('process')
 const { data } = require('jquery')
+const passport = require('passport')
+const passportLocal = require('passport-local')
 
 const database = mysql.createConnection({
   host: 'localhost',
@@ -97,6 +99,9 @@ function search(req, res, next) {
 };
 
 
+passport.use(new passportLocal.Strategy({
+  usernameField: 'email'
+}, async () => {}))
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
@@ -107,6 +112,7 @@ app.use('css', express.static(__dirname, + 'application/views/pages'))
 
 app.use(express.json())
 app.use(express.urlencoded())
+app.use(passport.initialize())
 
 
 // Route handler that sends the response
