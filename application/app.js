@@ -141,7 +141,7 @@ app.use('css', express.static(__dirname, + 'application/views/pages'))
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(passport.initialize())
-app.use(passport.session())
+
 
 // Route handler that sends the response
 
