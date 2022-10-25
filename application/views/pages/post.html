@@ -26,10 +26,10 @@
         <label class="logo">JobHunter</label>
         <nav>
             <ul>
-                <li><a href="../index.ejs">Home</a></li>
-                <li><a href="../views/login.ejs">Login</a></li>
-                <li><a href="../views/register.ejs">register</a></li>
-                <li><a href="../views/about.ejs">About</a></li>
+                <li><a href="./index.ejs">Home</a></li>
+                <li><a href="./views/login.ejs">Login</a></li>
+                <li><a href="./views/register.ejs">register</a></li>
+                <li><a href="./views/about.ejs">About</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
         </nav>
@@ -41,29 +41,29 @@
     <!-- <div class="background-image"></div> -->
 
     <div class="container">
-        <form class="form" action="/post" method="post" id="createAccount">
+        <form class="form" action="/post" method="POST" id="createAccount">
             <h1 class="form_title">JOB POSTING</h1>
             <div class="form_message form_message-error"></div>
             <div class="form_input-group">
                 <label for="job-title">Job Title:</label>
-                <input type="text" class="form_input" id="name" autofocus placeholder="Product Designer">
+                <input type="text" class="form_input" name="name" autofocus placeholder="Product Designer">
                 <div class="form_input-error-message"></div>
             </div>
 
             <div class="form_input-group">
                 <label for="location">Location:</label>
-                <input type="text" class="form_input" id="location" autofocus placeholder="e.g. San Francisco">
+                <input type="text" class="form_input" name="location" autofocus placeholder="e.g. San Francisco">
                 <div class="form_input-error-message"></div>
             </div>
             <div class="form_input-group">
                 <label for="company-name">Company Name:</label>
-                <input type="text" class="form_input" id="companyname" autofocus placeholder="Enter the company name">
+                <input type="text" class="form_input" name="companyname" autofocus placeholder="Enter the company name">
                 <div class="form_input-error-message"></div>
             </div>
 
             <div class="form_input-group">
                 <label for="salary">Salary</label>
-                <input type="text" class="form_input" id="salary" autofocus placeholder="e.g. 5000">
+                <input type="text" class="form_input" name="salary" autofocus placeholder="e.g. 5000">
                 <div class="form_input-error-message"></div>
             </div>
 
@@ -114,7 +114,7 @@
                         </div>
                         <br>
                         <div class="col">
-                            <textarea id="Comment" action="/submit" placeholder="Your text here"></textarea>
+                            <textarea id="Comment" name="comment" placeholder="Your text here"></textarea>
                         </div>
                     </div>
                 </div>
