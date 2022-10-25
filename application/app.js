@@ -111,6 +111,7 @@ passport.use(new passportLocal.Strategy({
         console.log(err)
       }
       userFound = result[0]
+      console.log(userFound)
     })
     console.log(password)
     console.log(userFound)
