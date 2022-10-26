@@ -172,7 +172,8 @@ app.get('/', search, (req, res) => {
     results: req.searchResult.length,
     searchVal: req.searchVal,
     searchResult: req.searchResult,
-    category: req.category
+    category: req.category,
+    name: req.userFound.name
   })
   console.log(req.searchResult); 
 })
