@@ -34,7 +34,7 @@ function search(req, res, next) {
   var sqlSearchVal = '%' + searchVal + '%'
   var query = 'SELECT * From Posting';
   if(searchVal != '' && category != '') {
-    query = "SELECT * FROM Posting WHERE Category = ? AND ( Name LIKE ?  OR Comment LIKE ?)";
+    query = "SELECT * FROM Posting WHERE description = ? AND ( Name LIKE ?  OR description LIKE ?)";
     database.query(query, [category, sqlSearchVal, sqlSearchVal], (err, result) => {
       console.log(query)
       if (err) {
@@ -51,7 +51,7 @@ function search(req, res, next) {
       next();
     })
   } else if(searchVal != '' && category == '') {
-    query = "SELECT * FROM Posting WHERE Name LIKE ? OR Comment LIKE ?";
+    query = "SELECT * FROM Posting WHERE Name LIKE ? OR description LIKE ?";
     database.query(query, [sqlSearchVal, sqlSearchVal], (err, result) => {
       console.log(query)
       if (err) {
@@ -68,7 +68,7 @@ function search(req, res, next) {
       next();
     })
   } else if(searchVal == '' && category != '') {
-    query = "SELECT * FROM Posting WHERE Category = ?"
+    query = "SELECT * FROM Posting WHERE description = ?"
     console.log(query)
     database.query(query, [category], (err, result) => {
       if (err) {
@@ -236,7 +236,7 @@ app.post('/post',function(req,res){
   var salary = req.body.salary;
   var comment = req.body.comment
 
-  var sql = "INSERT INTO Posting (name,location,companyname,salary,comment) VALUES ('"+name+"', '"+location+"', '"+companyname+"','"+salary+"','"+comment+"')";
+  var sql = "INSERT INTO Posting (name,location,companyname,salary,description) VALUES ('"+name+"', '"+location+"', '"+companyname+"','"+salary+"','"+comment+"')";
   database.query(sql, function (err, result) {
     if (err) {
       return res.send(err);
