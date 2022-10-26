@@ -8,7 +8,7 @@
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
 1. Server URL: http://ec2-13-56-151-200.us-west-1.compute.amazonaws.com
-or IP: 13.56.151.200
+or IP: 13.57.57.34:22
 2. SSH username: ubuntu
 3. SSH password or key: s1.pem (inside server folder)
     <br> If a ssh key is used please upload the key to the credentials folder.
@@ -18,7 +18,7 @@ or IP: 13.56.151.200
 6. Root@123
 7. CSC648Team04
 8. Connect to database by logging into root account using the SSH username and password. Make sure SSH key is downloaded from Credentials folder.
-Make sure IP and port is input correctly. Test connection to make sure you are connected to DB. YoU can launch website from the WWW link.
+Make sure IP and port is input correctly. Test connection to make sure you are connected to DB. You can launch website from the WWW link.
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
