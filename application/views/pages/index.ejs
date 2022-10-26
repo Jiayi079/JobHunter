@@ -53,11 +53,18 @@
 <script>
   $( document ).ready(function() {
     <% for (var i = 0; i < searchResult.length; i++) { %>
+      var newDiv = document.createElement("div");
+      newDiv.className = "content"
+      var btn = document.createElement("button");
+      btn.className = "collapsible"
+      btn.innerHTML = " <%= searchResult[i]['ID'] %>. <%= searchResult[i]['Name'] %> ";
       var tag = document.createElement("p");
-      var text = document.createTextNode("<%= searchResult[i]['ID'] %>. <%= searchResult[i]['Name'] %>");
+      var text = document.createTextNode("<%= searchResult[i]['Comment'] %>");
       tag.appendChild(text);
       var element = document.getElementById("result");
-      element.appendChild(tag);
+      element.appendChild(btn)
+      element.appendChild(newDiv)
+      newDiv.appendChild(tag)
    <% }  %> 
   });
 </script>
@@ -65,8 +72,26 @@
     
     
 <!-- Results will be shown here add class tag to this div-->
+
 <div class="result" id="result" >
 
 </div>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
 </body>
 </html>
