@@ -80,7 +80,7 @@ margin-left: 2.5rem;
   background: #ffffff;
 }
 
-form {
+form-page {
 height: 80rem;
 padding: 2rem;
 }
@@ -156,7 +156,7 @@ padding: 2rem;
 
 .form_button {
   left: 40%;
-  position:absolute;
+  /* position:absolute; */
   top:80rem;
   display:block;
   width: 20%;
