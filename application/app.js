@@ -12,6 +12,7 @@ const { rejects } = require('assert')
 const session = require('express-session')
 const flash = require('express-flash')
 const MySQLStore = require('express-mysql-session')(session)
+const cookiePrser = require('cookie-parser')
 
 const database = mysql.createConnection({
   host: 'localhost',
@@ -160,7 +161,7 @@ app.use('css', express.static(__dirname, + 'application/memberPages'))
 app.use('css', express.static(__dirname, + 'application/css'))
 app.use('css', express.static(__dirname, + 'application/views/pages'))
 app.use('css', express.static(__dirname, + 'application/views/css'))
-
+app.use(cookiePrser());
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(passport.initialize())
@@ -176,7 +177,8 @@ app.get('/', search, (req, res) => {
     searchResult: req.searchResult,
     category: req.category,
   })
-  console.log(req.searchResult); 
+  console.log(req.searchResult);
+  console.log(req.user); 
 })
 
 
