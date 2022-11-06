@@ -116,7 +116,7 @@ passport.deserializeUser(function(userId, done) {
   database.query('SELECT * FROM userData where id = ?',[userId], function(err, results) {
     if (err) return done(err)
     if (results[0]) {
-      console.log(results[0].username)
+      console.log(results[0])
       return done(null, results[0])
     } else {
       return done(null, false)
@@ -161,13 +161,13 @@ passport.use(new passportLocal.Strategy({
   try {
     const userFound = await query1Promise(email)
     console.log(userFound);
-    user = {id:userFound[0].id, email:userFound[0].email}
     if (userFound.length == 0) {
       console.log("Sanity")
       done(null, false, { message: 'No user with that email'})
     }
     else if ( userFound[0] && password == userFound[0].password) {
       console.log("Success")
+      user = {id:userFound[0].id, email:userFound[0].email}
       done(null,user)
     } else {
       done(null, false, { message: 'Password incorrect'})
