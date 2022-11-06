@@ -192,7 +192,21 @@ app.use(passport.session())
 
 
 // Route handler that sends the response
+function isAuth(req, res, next) {
+  if (req.isAuthenticated()) {
+    next()
+  } else {
+    res.redirect('./')
+  }
+}
 
+function isAdmin(req, res, next) {
+  if (req.isAuthenticated && req.isAdmin == 1) {
+    next()
+  } else {
+    res.redirect('./')
+  }
+}
 app.get('/', search, (req, res) => {
   res.render('pages/index', {
     results: req.searchResult.length,
