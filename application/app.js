@@ -13,6 +13,7 @@ const session = require('express-session')
 const flash = require('express-flash')
 const MySQLStore = require('express-mysql-session')(session)
 const cookiePrser = require('cookie-parser')
+const crypto = require('crypto');
 
 const database = mysql.createConnection({
   host: 'localhost',
@@ -106,11 +107,15 @@ function search(req, res, next) {
 };
 
 passport.serializeUser(function(user, done) {
-  done(null, user);
+  console.log("inside serialize")
+  done(null, user.id);
 });
 
-passport.deserializeUser(function(user, done) {
-  done(null, user);
+passport.deserializeUser(function(userId, done) {
+  console.log("deseriealize user" + userId)
+  database.query('SELECT * From userData WHERE id = ?'), [userId], function(error, results) {
+    done(null, results[0])
+  }
 });
 
 query1Promise = (email) => {
