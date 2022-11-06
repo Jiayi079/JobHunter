@@ -138,7 +138,7 @@ passport.use(new passportLocal.Strategy({
   try {
     const userFound = await query1Promise(email)
     console.log(userFound);
-    if (userFound == null) {
+    if (userFound.length == 0) {
       console.log("Sanity")
       done(null, false, { message: 'No user with that email'})
     }
