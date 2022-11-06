@@ -154,13 +154,14 @@ passport.use(new passportLocal.Strategy({
   try {
     const userFound = await query1Promise(email)
     console.log(userFound);
+    user = {id:userFound[0].id, email:userFound[0].email}
     if (userFound.length == 0) {
       console.log("Sanity")
       done(null, false, { message: 'No user with that email'})
     }
     else if ( userFound[0] && password == userFound[0].password) {
       console.log("Success")
-      done(null,userFound)
+      done(null,user)
     } else {
       done(null, false, { message: 'Password incorrect'})
     }
