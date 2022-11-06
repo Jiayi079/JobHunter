@@ -216,7 +216,7 @@ app.get('/', search, (req, res) => {
     isLogged: req.isAuthenticated()
   })
   console.log(req.searchResult);
-  console.log(req.isAdmin)
+  console.log(req.user.isAdmin)
 })
 
 
