@@ -142,7 +142,7 @@ passport.use(new passportLocal.Strategy({
       console.log("Sanity")
       done(null, false, { message: 'No user with that email'})
     }
-    if ( userFound[0] && password == userFound[0].password) {
+    else if ( userFound[0] && password == userFound[0].password) {
       console.log("Success")
       done(null,userFound)
     } else {
