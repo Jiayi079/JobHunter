@@ -53,9 +53,13 @@
                     <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
                     <a href="./about" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
                     <a href="#" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
-                    <a href="./register" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Register</span>
-                    <a href="./login" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Login</span>
-                    <a href="./logout" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Log-out</span>
+                    <% if (!isLogged)  { %>
+                      <a href="./register" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Register</span>
+                      <a href="./login" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Login</span>
+                    <% } %> 
+                    <% if (isLogged) { %>
+                      <a href="./logout" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Log-out</span>
+                    <% } %>
                     <div class="nav-item dropdown navbar-nav ml-auto">
                         <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa fa-info-circle"></i> Info</a>
                         <div class="dropdown-menu">
@@ -66,7 +70,7 @@
             </div>
         </nav>
     </div>
-</header>
+  </header>
 
 
 <body>
