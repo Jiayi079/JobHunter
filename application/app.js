@@ -300,6 +300,12 @@ app.get('/about', (req, res) => {
   });
 })
 
+app.get('/admin', isAdmin, (req, res) => {
+  res.render('pages/admin', {
+    isLogged: req.isAuthenticated()
+  })
+})
+
 app.get('/logout', function(req, res, next) {
   req.logout(function(err) {
     if (err) { return next(err); }
