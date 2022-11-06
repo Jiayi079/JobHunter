@@ -188,7 +188,7 @@ app.get('/', search, (req, res) => {
     category: req.category,
   })
   console.log(req.searchResult);
-  console.log(req.user.id); 
+  console.log(req.user); 
 })
 
 
