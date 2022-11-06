@@ -131,6 +131,7 @@ app.use(session({
   store: new MySQLStore({
     host: 'localhost',
     user: 'root',
+    password: 'Root@123',
     database: 'job'
   }),
   resave: false,
