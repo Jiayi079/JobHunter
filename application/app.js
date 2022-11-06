@@ -216,6 +216,7 @@ app.get('/', search, (req, res) => {
   })
   console.log(req.searchResult);
   console.log(req.user)
+  console.log(req.isAuthenticated)
 })
 
 
