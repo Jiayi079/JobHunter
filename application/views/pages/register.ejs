@@ -40,31 +40,14 @@
                     <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
                     <a href="./about" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
                     <a href="#" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
+                    <a href="./register" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Register</span>
+                    <a href="./login" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Login</span>
                     <div class="nav-item dropdown navbar-nav ml-auto">
                         <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa fa-info-circle"></i> Info</a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
                         </div>
                     </div>
-    
-                    <div sec:autorize="isAuthenticated()">
-                        <button class="btn btn-primary" type="button" id="login"><i class="fa fa-sign-in"></i> Log in</button>
-                        <script type="text/javascript">
-                            $(function() {
-                                $("#loginBtn").click(function () {
-                                    window.location.href = '/login'
-                                })
-                            });
-                        </script>
-                    </div>
-    
-                    <div sec:autorize="isAuthenticated()">
-                        <form action="/logout" method="post" class="float-right">
-                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-                            <button class="btn btn-secondary btn-lg" type="button" id="login"><i class="fa fa-sign-out"></i> Logout</button>
-                        </form>
-                    </div>
-    
                 </div>
             </div>
         </nav>
