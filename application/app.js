@@ -113,7 +113,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(userId, done) {
   console.log("deseriealize user" + userId)
-  database.query('SELECT * FROM userData where id = ?',[userId], function(error, results) {
+  database.query('SELECT * FROM userData where id = ?',[userId], function(err, results) {
     if (err) return done(err)
     if (results[0]) {
       return done(null, results[0])
