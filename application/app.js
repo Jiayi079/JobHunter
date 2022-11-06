@@ -201,8 +201,12 @@ function isAuth(req, res, next) {
 }
 
 function isAdmin(req, res, next) {
-  if (req.isAuthenticated && req.user.isAdmin == 1) {
-    next()
+  if (req.user) {
+    if (req.isAuthenticated && req.user.isAdmin == 1) {
+      next()
+    } else {
+      res.redirect('./')
+    }
   } else {
     res.redirect('./')
   }
