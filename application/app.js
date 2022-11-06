@@ -221,15 +221,21 @@ app.get('/', search, (req, res) => {
 
 
 app.get('/register', (req, res) => {
-  res.render('pages/register');
+  res.render('pages/register', {
+    isLogged: req.isAuthenticated()
+  });
 })
 
 app.get('/login', (req, res) => {
-  res.render('pages/login');
+  res.render('pages/login', {
+    isLogged: req.isAuthenticated()
+  });
 })
 
 app.get('/post', (req, res) => {
-  res.render('pages/post');
+  res.render('pages/post', {
+    isLogged: req.isAuthenticated()
+  });
 })
 
 // Login authentication
@@ -289,7 +295,9 @@ app.post('/post',function(req,res){
   
   });
 app.get('/about', (req, res) => {
-  res.render('pages/about');
+  res.render('pages/about', {
+    isLogged: req.isAuthenticated()
+  });
 })
 
 app.get('/logout', function(req, res, next) {
