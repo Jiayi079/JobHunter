@@ -34,7 +34,7 @@ function search(req, res, next) {
   var sqlSearchVal = '%' + searchVal + '%'
   var query = 'SELECT * From Posting';
   if(searchVal != '' && category != '') {
-    query = "SELECT * FROM Posting WHERE description = ? AND ( Name LIKE ?  OR Category LIKE ?)";
+    query = "SELECT * FROM Posting WHERE Category = ? AND ( Name LIKE ?  OR Category LIKE ?)";
     database.query(query, [category, sqlSearchVal, sqlSearchVal], (err, result) => {
       console.log(query)
       if (err) {
