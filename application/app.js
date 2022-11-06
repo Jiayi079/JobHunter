@@ -213,10 +213,10 @@ app.get('/', search, (req, res) => {
     searchVal: req.searchVal,
     searchResult: req.searchResult,
     category: req.category,
+    isLogged: req.isAuthenticated()
   })
   console.log(req.searchResult);
   console.log(req.user)
-  console.log(req.isAuthenticated())
 })
 
 
