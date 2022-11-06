@@ -126,9 +126,18 @@ query1Promise = (email) => {
 
 app.use(flash())
 app.use(session({
-  secret: 'tee',
+  key: 'session_cookie_name',
+  secret: 'session_cookie_secret',
+  store: new MySQLStore({
+    host: 'localhost',
+    user: 'root',
+    database: 'job'
+  }),
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: {
+    maxAge:1000*60*60*24,
+  }
 }))
 
 // Login authentication
