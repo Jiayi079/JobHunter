@@ -115,7 +115,7 @@ passport.deserializeUser(function(userId, done) {
   console.log("deseriealize user" + userId)
   database.query('SELECT * FROM userData where id = ?',[userId], function(error, results) {
     done(null, results[0])
-  }
+  });
 });
 
 query1Promise = (email) => {
