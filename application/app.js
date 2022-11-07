@@ -280,7 +280,7 @@ app.post('/login', passport.authenticate('local', {
 
 // Register new user
 
-app.post('deleteMessage', isAuth, function(req, res) {
+app.post('/deleteMessage', isAuth, function(req, res) {
 
   var sql = "UPDATE userData SET message = null WHERE id = ?"
 
