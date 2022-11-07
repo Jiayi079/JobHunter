@@ -200,6 +200,16 @@ function isAuth(req, res, next) {
   }
 }
 
+function isCompany(req, res, next) {
+  if (req.user) {
+    if (req.isCompany == 1) {
+      next()
+    } else {
+      res.redirect('./')
+    }
+  }
+}
+
 function isAdmin(req, res, next) {
   if (req.user) {
     if (req.isAuthenticated && req.user.isAdmin == 1) {
@@ -226,19 +236,22 @@ app.get('/', search, (req, res) => {
 
 app.get('/register', (req, res) => {
   res.render('pages/register', {
-    isLogged: req.isAuthenticated()
+    isLogged: req.isAuthenticated(),
+    isCompany: req.isCompany()
   });
 })
 
 app.get('/login', (req, res) => {
   res.render('pages/login', {
-    isLogged: req.isAuthenticated()
+    isLogged: req.isAuthenticated(),
+    isCompany: req.isCompany()
   });
 })
 
-app.get('/post', (req, res) => {
+app.get('/post', isCompany, (req, res) => {
   res.render('pages/post', {
-    isLogged: req.isAuthenticated()
+    isLogged: req.isAuthenticated(),
+    isCompany: req.isCompany()
   });
 })
 
@@ -269,7 +282,7 @@ app.post('/register',function(req,res){
   
   });
 
-app.get('/users', function(req, res) {
+app.get('/users', isAdmin, function(req, res) {
   var query = "SELECT * From userData"
 
   database.query(query, function (err, result) {
@@ -300,7 +313,8 @@ app.post('/post',function(req,res){
   });
 app.get('/about', (req, res) => {
   res.render('pages/about', {
-    isLogged: req.isAuthenticated()
+    isLogged: req.isAuthenticated(),
+    isCompany: req.isCompany()
   });
 })
 

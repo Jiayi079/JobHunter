@@ -50,7 +50,9 @@
                 </form> -->
                 <div class="navbar-nav ml-auto">
                     <a href="./" class="nav-item nav-link"><i class="fa fa-home"></i><span>Home</span></a>
-                    <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
+                    <% if (isCompany) { %>
+                        <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
+                    <% } %>
                     <a href="./about" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
                     <a href="#" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
                     <% if (!isLogged)  { %>
