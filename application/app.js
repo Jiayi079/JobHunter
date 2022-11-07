@@ -228,6 +228,7 @@ app.get('/', search, (req, res) => {
     searchResult: req.searchResult,
     category: req.category,
     isLogged: req.isAuthenticated()
+    isCompany: req.user.isCompany
   })
   console.log(req.searchResult);
   console.log(req.user)
