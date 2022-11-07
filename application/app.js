@@ -240,7 +240,7 @@ app.get('/', search, (req, res) => {
 app.get('/register', (req, res) => {
   res.render('pages/register', {
     isLogged: req.isAuthenticated(),
-    isCompany: req.user.isCompany
+    isCompany: req.user ? req.user.isCompany : 0
   });
 })
 
