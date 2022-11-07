@@ -242,7 +242,7 @@ app.get('/', search, (req, res) => {
     searchResult: req.searchResult,
     category: req.category,
     isLogged: req.isAuthenticated(),
-    isCompany: req.user ? req.user.isCompany : 0
+    isCompany: req.user ? req.user.isCompany : 0,
   })
   console.log(req.searchResult);
   console.log(req.user)
@@ -288,8 +288,8 @@ app.post('/deleteMessage', isAuth, function(req, res) {
     if (err) {
       return err
     }
-
     console.log("message deleted for user ", req.user.id)
+    res.redirect('/')
   })
 })
 
@@ -367,6 +367,14 @@ app.get('/notifications', isAuth, (req, res) => {
     message: req.user ? req.user.message : null
   })
 })
+
+app.all('/session-flash', function( req, res ) {
+  req.session.sessionFlash = {
+      type: 'success',
+      message: 'This is a flash message using custom middleware and express-session.'
+  }
+  res.redirect(301, '/');
+});
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
