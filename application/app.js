@@ -336,7 +336,7 @@ app.get('/about', (req, res) => {
 app.get('/admin', isAdmin, (req, res) => {
   res.render('pages/admin', {
     isLogged: req.isAuthenticated(),
-    isCompany: req.user ? req.ser.isCompany : 0
+    isCompany: req.user ? req.user.isCompany : 0
   })
 })
 
