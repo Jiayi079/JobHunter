@@ -293,6 +293,20 @@ app.post('/deleteMessage', isAuth, function(req, res) {
   })
 })
 
+app.post('/createMessage', isAdmin, function(req, res) {
+  var message = req.body.message
+  var id = req.body.userID
+  var sql = "UPDATE userDATA SET message = ? WHERE id = ?"
+
+  database.query(sql, [message, id], function(err, results) {
+    if (err) {
+      return err
+    }
+    console.log("message added for ", req.user.id)
+    res.redirect('/admin')
+  })
+})
+
 app.post('/register',function(req,res){
 
   var username = req.body.username;
