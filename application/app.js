@@ -300,10 +300,10 @@ app.post('/createMessage', isAdmin, function(req, res) {
 
   database.query(sql, [message, id], function(err, results) {
     if (err) {
-      return err
+      return res.send(err)
     }
     console.log("message added for ", req.user.id)
-    res.redirect('/admin')
+    res.redirect('/')
   })
 })
 
