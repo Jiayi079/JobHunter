@@ -202,11 +202,13 @@ function isAuth(req, res, next) {
 
 function isCompany(req, res, next) {
   if (req.user) {
-    if (req.isCompany == 1) {
+    if (req.user.isCompany == 1) {
       next()
     } else {
       res.redirect('./')
     }
+  } else {
+    res.redirect('./')
   }
 }
 
