@@ -278,7 +278,20 @@ app.post('/login', passport.authenticate('local', {
   failureFlash: true
 }))
 
-// Register new user 
+// Register new user
+
+app.post('deleteMessage', isAuth, function(req, res) {
+
+  var sql = "UPDATE userData SET message = null WHERE id = ?"
+
+  database.query(sql, [req.user.id], function(err, results) {
+    if (err) {
+      return err
+    }
+
+    console.log("message deleted for user ", req.user.id)
+  })
+})
 
 app.post('/register',function(req,res){
 
