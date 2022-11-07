@@ -350,7 +350,7 @@ app.get('/notifications', isAuth, (req, res) => {
   res.render('pages/notifications', {
     isLogged: req.isAuthenticated(),
     isCompany: req.user ? req.user.isCompany : 0,
-    message: req.user ? req.user.message : ""  
+    message: req.user ? req.user.message : null
   })
 })
 
