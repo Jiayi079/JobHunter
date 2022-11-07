@@ -296,7 +296,7 @@ app.post('/deleteMessage', isAuth, function(req, res) {
 app.post('/createMessage', isAdmin, function(req, res) {
   var message = req.body.message
   var id = req.body.userID
-  var sql = "UPDATE userDATA SET message = ? WHERE id = ?"
+  var sql = "UPDATE userData SET message = ? WHERE id = ?"
 
   database.query(sql, [message, id], function(err, results) {
     if (err) {
