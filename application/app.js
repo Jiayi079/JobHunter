@@ -237,21 +237,21 @@ app.get('/', search, (req, res) => {
 app.get('/register', (req, res) => {
   res.render('pages/register', {
     isLogged: req.isAuthenticated(),
-    isCompany: req.isCompany()
+    isCompany: req.user.isCompany
   });
 })
 
 app.get('/login', (req, res) => {
   res.render('pages/login', {
     isLogged: req.isAuthenticated(),
-    isCompany: req.isCompany()
+    isCompany: req.user.isCompany
   });
 })
 
 app.get('/post', isCompany, (req, res) => {
   res.render('pages/post', {
     isLogged: req.isAuthenticated(),
-    isCompany: req.isCompany()
+    isCompany: req.user.isCompany
   });
 })
 
@@ -314,7 +314,7 @@ app.post('/post',function(req,res){
 app.get('/about', (req, res) => {
   res.render('pages/about', {
     isLogged: req.isAuthenticated(),
-    isCompany: req.isCompany()
+    isCompany: req.user.isCompany
   });
 })
 
