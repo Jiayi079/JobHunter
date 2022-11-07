@@ -200,6 +200,18 @@ function isAuth(req, res, next) {
   }
 }
 
+function hasMessage(req, res, next) {
+  if (req.user) {
+    if (req.user.message.length > 0) {
+      next()
+    } else {
+      res.redirect('./')
+    }
+  } else {
+    res.redirect('./')
+  }
+}
+
 function isCompany(req, res, next) {
   if (req.user) {
     if (req.user.isCompany == 1) {
@@ -333,6 +345,13 @@ app.get('/logout', function(req, res, next) {
     res.redirect('/');
   });
 });
+
+app.get('/notifications', isAuth, (req, res) => {
+  res.render('pages/notifications', {
+    isLogged: req.isAuthenticated(),
+    message: req.user ? req.user.message : ""  
+  })
+})
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
