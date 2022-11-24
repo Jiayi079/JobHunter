@@ -1,0 +1,114 @@
+#nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#banner, #pagebody {
+    position: relative;
+    top: 30px;
+}
+
+.heading {
+	width: 100%;
+  height: 100px;
+	margin: 0 auto;
+}
+
+header {
+  background: rgb(81, 5, 221);
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+label.logo {
+  color: white;
+  font-size: 30px;
+  line-height: 120px;
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+nav {
+  float: right;
+  /* padding: 20px; */
+  width: 50%;
+  /* margin: 0 auto; */
+  background: rgbrgb(80, 3, 151);
+  padding: 20px 0;
+  /* box-shadow: 0px 5px 0px #dedede; */
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+  position: relative;
+}
+
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-size: 15px;
+
+  display: block;
+  /* padding: 10px; */
+  text-decoration: none;
+  font-weight: 800;
+  margin: 0 10px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+
+nav ul li a:hover {
+    color: rgb(14, 152, 233);
+    transform: translate(0,0);
+
+}
+
+nav a {
+    position: relative;
+    z-index: 1;
+}
+
+nav a:hover {
+    color: #e0c187;
+}
+
+nav a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    content: '.';
+    color: transparent;
+    background: #d3d3d0;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+}
+
+nav a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}

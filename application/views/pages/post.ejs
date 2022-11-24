@@ -1,0 +1,234 @@
+<!-- <!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>JobBoard</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/post_job.css" rel="stylesheet" type="text/css">
+    </head>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YG8H6E4X5E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YG8H6E4X5E');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PNHWWS8');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="../css/nav_bar.css" rel="stylesheet" type="text/css"> -->
+    <link href="../css/new_nav_bar.css" rel="stylesheet" type="text/css">
+    <link href="../css/post_job.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- new nav bar -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <title>CSC648-02-fa22-team04</title>
+</head>
+
+<header>
+    <div class="heading">
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+            <a href="./" class="navbar-brand"><i class="fa fa-cube"></i>Job<b>Hunter</b></a>  		
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collection of nav links, forms, and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
+                <!-- <form class="navbar-form form-inline">
+                    <div class="input-group search-box">								
+                        <input type="text" id="search" class="form-control" placeholder="Search here...">
+                        <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+                    </div>
+                </form> -->
+                <div class="navbar-nav ml-auto">
+                    <a href="./" class="nav-item nav-link"><i class="fa fa-home"></i><span>Home</span></a>
+                    <% if (isCompany) { %>
+                        <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
+                    <% } %>
+                    <a href="./about" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
+                    <a href="./notifications" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
+                    <% if (!isLogged)  { %>
+                      <a href="./register" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Register</span>
+                      <a href="./login" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Login</span>
+                    <% } %> 
+                    <% if (isLogged) { %>
+                      <a href="./logout" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Log-out</span>
+                    <% } %>
+                    <div class="nav-item dropdown navbar-nav ml-auto">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa fa-info-circle"></i> Info</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+  </header>
+
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNHWWS8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- <div class="background-image"></div> -->
+    <h5>SFSU Software Engineering Project CSC 648-848, Fall 2022. For Demonstration Only</h5>
+    <div class="container">
+        <form class="form-page" action="/post" method="POST" id="createAccount">
+            <h1 class="form_title">JOB POSTING</h1>
+            <div class="form_message form_message-error"></div>
+            <div class="form_input-group">
+                <label for="job-title">Job Title:</label>
+                <input type="text" class="form_input" name="name" autofocus placeholder="Product Designer">
+                <div class="form_input-error-message"></div>
+            </div>
+
+            <div class="form_input-group">
+                <label for="location">Location:</label>
+                <input type="text" class="form_input" name="location" autofocus placeholder="e.g. San Francisco">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="form_input-group">
+                <label for="company-name">Company Name:</label>
+                <input type="text" class="form_input" name="companyname" autofocus placeholder="Enter the company name">
+                <div class="form_input-error-message"></div>
+            </div>
+
+            <div class="form_input-group">
+                <label for="salary">Salary</label>
+                <input type="text" class="form_input" name="salary" autofocus placeholder="e.g. 5000">
+                <div class="form_input-error-message"></div>
+            </div>
+
+            <!-- <div class="form_input-group"> -->
+                <!-- <label for="job-title">Job Description:</label> -->
+                <!-- <textarea rows="5" cols="10" style = "width:150px;height: 17px;"> -->
+                    <!-- Enter the related content here... -->
+                <!-- </textarea> -->
+                
+            <!-- </div> -->
+            <div class="editor">
+                <label for="job-description">Job Description</label>
+                <div class="row">
+                    <div class="col1">
+                        <div class="first box">
+                            <input type="number" id="font-size" min="1" max="100" value="16" onchange="f1(this)">
+                        </div>
+                        <div class="second box">
+                            <button type="button" onclick="f2(this)">
+                                <i class="fa-solid fa-bold"></i>
+                            </button>
+                            <button type="button" onclick="f3(this)">
+                                <i class="fa-solid fa-italic"></i>
+                            </button>
+                            <button type="button" onclick="f4(this)">
+                                <i class="fa-solid fa-underline"></i>
+                            </button>
+                        </div>
+                        <div class="third box">
+                            <button type="button" onclick="f5(this)">
+                                <i class="fa-solid fa-align-left"></i>
+                            </button>
+                            <button type="button" onclick="f6(this)">
+                                <i class="fa-solid fa-align-center"></i>
+                            </button>
+                            <button type="button" onclick="f7(this)">
+                                <i class="fa-solid fa-align-right"></i>
+                            </button>
+                        </div>
+                        <div class="fourth box">
+                            <button type="button" onclick="f8(this)">
+                                aA
+                            </button>
+                            <button type="button" onclick="f9(this)">
+                                <i class="fa-solid fa-text-slash"></i>
+                            </button>
+                            <input type="color" onchange="f10(this)">
+                        </div>
+                        <br>
+                        <div class="col">
+                            <textarea name="comment" placeholder="Your text here"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selectdiv">
+                <label for="job_type">Job Type</label>
+                <label>
+                    <select>
+                        <option selected>Select..</option>
+                        <option>Full-Time</option>
+                        <option>Internship</option>
+                        <option>Part-Time</option>
+                    </select>
+                </label>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <button class="form_button" type="submit">POST</button>
+            <!-- <p class="form_text">
+                <a href="" class="form_link">Forgot your password?</a>
+            </p>
+            <p class="form_text">
+                <a class="form_link" href="./login.html" id="linkLogin">Already have an account? Sign in</a>
+            </p> -->
+        </form>
+
+    </div>
+
+    <script src="../editor.js"></script>
+</body>
+</html>
+
+<!-- Include the Quill library -->
+<!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script>
+$(document).ready(function() {
+    var quill = new Quill('#editor-container', {
+        modules: {
+            toolbar: '#toolbar-container'
+        },
+        placeholder: 'Compose an epic...',
+        theme: 'snow'
+    });
+        
+    // Enable all tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+        
+    // Can control programmatically too
+    $('.ql-italic').mouseover();
+    setTimeout(function() {
+        $('.ql-italic').mouseout();
+    }, 2500);
+});
+</script> -->

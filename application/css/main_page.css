@@ -1,0 +1,195 @@
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+* {
+    padding: 1px;
+}
+
+body{
+    background: #efefef;
+    height: 200px;
+}
+
+.search-box .selection-box
+{
+    float: left;
+    font-size: 20px;
+    margin: 60px;
+}
+
+.search-box .text-search
+{
+    float: right;
+    font-size: 20px;
+    margin:100px;
+}
+
+form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+
+form:hover,
+form:valid{
+    width: 300px;
+    cursor: pointer;
+}
+
+form:hover input,
+form:valid input{
+    display: block;
+}
+
+form:hover .fa,
+form:valid .fa{
+    background: #07051a;
+    color: white;
+}
+
+
+a {
+  display: none;
+  position: absolute;
+  top: 70px;
+  bottom:0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  color: white;
+  text-align: center; 
+  width: 100%;
+}
+
+form:valid a {
+  display: block;
+}
+
+.side-bar {
+    float:left;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 100rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+    
+.div1 { grid-area: 1 / 1 / 2 / 3; }
+.div2 { grid-area: 2 / 1 / 3 / 3; }
+.div3 { grid-area: 3 / 1 / 4 / 3; }
+.div4 { grid-area: 4 / 1 / 5 / 3; }
+.div5 { grid-area: 5 / 1 / 6 / 3; }
+.text-bar { grid-area: 1 / 2 / 2 / 6; }
+
+  
+/* Style the buttons inside the tab */
+.side-bar button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+  
+/* Change background color of buttons on hover */
+.side-bar button:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+  
+/* Create an active/current "tab button" class */
+.side-bar button.active {
+    background-color: #ccc;
+}
+  
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 100%;
+    border-left: none;
+    height:100vw;
+}
+
+.text-bar {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 600px;
+}
+
+.nav-tabs {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.nav-tabs h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-tabs h2 {
+    font-size: 15px;
+}
+
+.nav-tabs h3 {
+    font-size: 15px;
+}
+
+.nav-tabs h4 {
+    font-size: 15px;
+}
+
+

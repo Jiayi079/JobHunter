@@ -1,0 +1,153 @@
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YG8H6E4X5E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YG8H6E4X5E');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PNHWWS8');</script>
+  <!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/new_nav_bar.css" rel="stylesheet" type="text/css">
+<link href="../css/login.css" rel="stylesheet" type="text/css">
+<link href="../views/css/login.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- new nav bar -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<title>CSC648-02-fa22-team04</title>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNHWWS8"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<% var category; %> 
+<% var searchVal; %>
+<header>
+  <div class="heading">
+      <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+          <a href="./" class="navbar-brand"><i class="fa fa-cube"></i>Job<b>Hunter</b></a>  		
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Collection of nav links, forms, and other content for toggling -->
+          <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
+              <!-- <form class="navbar-form form-inline">
+                  <div class="input-group search-box">								
+                      <input type="text" id="search" class="form-control" placeholder="Search here...">
+                      <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+                  </div>
+              </form> -->
+              <div class="navbar-nav ml-auto">
+                  <a href="./" class="nav-item nav-link"><i class="fa fa-home"></i><span>Home</span></a>
+                  <% if (isCompany) { %>
+                    <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
+                <% } %>
+                  <a href="./about" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
+                  <a href="./notifications" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
+                  <% if (!isLogged)  { %>
+                    <a href="./register" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Register</span>
+                    <a href="./login" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Login</span>
+                  <% } %> 
+                  <% if (isLogged) { %>
+                    <a href="./logout" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Log-out</span>
+                  <% } %>
+                  <div class="nav-item dropdown navbar-nav ml-auto">
+                      <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa fa-info-circle"></i> Info</a>
+                      <div class="dropdown-menu">
+                          <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+  </div>
+</header>
+<h5>SFSU Software Engineering Project CSC 648-848, Fall 2022. For Demonstration Only</h5>
+<!-- Dont touch this part -->
+<div class="search-container">
+  <form>
+    <input class="form_input" id="search" type="text" value="<%= searchVal %> " name="search" placeholder="Search..">
+    <div class="custom-select" style="width:200px;">
+      <select name="category" onchange="this.form(submit)">
+        <option value="">All Categories</option>
+        <option value="AI" <% if (category == "AI") { %> selected <% } %> >AI</option>
+        <option value="Software Dev" <% if (category == "Software Dev") { %> selected <% } %> >Software Dev</option>
+        <option value="Web Dev" <% if (category == "Web Dev") { %> selected <% } %> >Web Dev</option>
+        <option value="UX Designer" <% if (category == "UX Designer") { %> selected <% } %> >UX Designer</option>
+        <option value="Mobile App" <% if (category == "Mobile App") { %> selected <% } %> >Mobile App</option>
+        <option value="IT" <% if (category == "IT") { %> selected <% } %> >IT</option>
+        <option value="Security" <% if (category == "Security") { %> selected <% } %> >Security</option>
+        <option value="System Architect" <% if (category == "System Architect") { %> selected <% } %> >System Architect</option>
+        <option value="Video Game Dev" <% if (category == "Video Game Dev") { %> selected <% } %> >Video Game Dev</option>
+      </select>
+    </div>
+    <button class="form_button" type="submit">Submit</button>
+  </form>
+</div>
+
+<!-- script that creates and adds posting elements to result division-->
+<script>
+  $( document ).ready(function() {
+    <% for (var i = 0; i < searchResult.length; i++) { %>
+      var newDiv = document.createElement("div");
+      newDiv.className = "content"
+      var btn = document.createElement("button");
+      btn.className = "collapsible"
+      btn.innerHTML = " <%= searchResult[i]['ID'] %>. <%= searchResult[i]['Name'] %> ";
+      var tag = document.createElement("p");
+      var text = document.createTextNode("<%= searchResult[i]['description'] %>");
+      tag.appendChild(text);
+      var element = document.getElementById("result");
+      element.appendChild(btn)
+      element.appendChild(newDiv)
+      newDiv.appendChild(tag)
+   <% }  %> 
+   
+   var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } 
+        });
+      }
+  });
+</script>
+
+    
+    
+<!-- Results will be shown here add class tag to this div-->
+
+<div class="result" id="result" >
+
+</div>
+
+</body>
+</html>
