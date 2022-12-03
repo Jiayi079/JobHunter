@@ -62,12 +62,7 @@
                 <a href="#" class="nav-item nav-link"><i class="fa fa-envelope"></i><span>Contact US</span></a>
                 <a href="../pages/about.html" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
                 <a href="#" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
-                <div class="nav-item dropdown navbar-nav ml-auto">
-                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa fa-info-circle"></i> Info</a>
-                    <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
-                    </div>
-                </div>
+                <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
 
                 <div sec:autorize="isAuthenticated()">
                     <button class="btn btn-primary" type="button" id="login"><i class="fa fa-sign-in"></i> Log in</button>
