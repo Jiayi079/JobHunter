@@ -116,7 +116,7 @@
       btn.className = "collapsible"
       btn.innerHTML = " <%= searchResult[i]['ID'] %>. <%= searchResult[i]['Name'] %> ";
       var tag = document.createElement("p");
-      var text = document.createTextNode("<b>Company: <%= searchResult[i]['CompanyName'] %></b> <br><b>Location:<%= searchResult[i]['Location'] %></b> <%= searchResult[i]['description'] %>");
+      var text = document.createTextNode("Company: <%= searchResult[i]['CompanyName'] %> Location:<%= searchResult[i]['Location'] %> <%= searchResult[i]['description'] %>");
       tag.appendChild(text);
       var element = document.getElementById("result");
       element.appendChild(btn)
