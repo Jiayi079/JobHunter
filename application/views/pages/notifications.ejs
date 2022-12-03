@@ -82,7 +82,7 @@
     </div>
   </header>
   <h5>SFSU Software Engineering Project CSC 648-848, Fall 2022. For Demonstration Only</h5>
-
+<div class="message">
   <% if (message) { %>
     <%= message %>
     <form action="/deleteMessage" method="POST">
@@ -91,4 +91,5 @@
     <% } else { %>
     <p>you have no new notifications</p>
     <% } %>
+    </div>
 </body>
