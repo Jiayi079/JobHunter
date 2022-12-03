@@ -270,6 +270,12 @@ app.get('/post', isCompany, (req, res) => {
   });
 })
 
+app.get('/profile', isLogged, (req, res) => {
+  res.render('pages/profile', {
+    isLogged: req.isAuthenticated(),
+    isCompany: req.user ? req.user.isCompany : 0
+  })
+})
 // Login authentication
 
 app.post('/login', passport.authenticate('local', {
