@@ -180,6 +180,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
 app.use(express.static('application'))
+app.use(express.static('views'))
 app.use('css', express.static(__dirname, + 'application/memberPages'))
 app.use('css', express.static(__dirname, + 'application/views'))
 app.use(cookiePrser());
