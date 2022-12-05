@@ -43,50 +43,40 @@
 </head>
 
 <header>
-    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-        <a href="index.html" class="navbar-brand"><i class="fa fa-cube"></i>Job<b>Hunter</b></a>  		
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Collection of nav links, forms, and other content for toggling -->
-        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
-            <!-- <form class="navbar-form form-inline">
-                <div class="input-group search-box">								
-                    <input type="text" id="search" class="form-control" placeholder="Search here...">
-                    <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+    <div class="heading">
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+            <a href="./" class="navbar-brand"><i class="fa fa-cube"></i>Job<b>Hunter</b></a>  		
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collection of nav links, forms, and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
+                <!-- <form class="navbar-form form-inline">
+                    <div class="input-group search-box">								
+                        <input type="text" id="search" class="form-control" placeholder="Search here...">
+                        <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+                    </div>
+                </form> -->
+                <div class="navbar-nav ml-auto">
+                    <a href="./" class="nav-item nav-link"><i class="fa fa-home"></i><span>Home</span></a>
+                    <% if (isCompany) { %>
+                      <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
+                  <% } %>
+                    <a href="./about" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
+                    <a href="./notifications" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
+                    <% if (!isLogged)  { %>
+                      <a href="./register" class="nav-item nav-link" ><i class="fa fa-sign-in"></i><span>Register</span></a>
+                      <a href="./login" class="nav-item nav-link"> <i class="fa fa-sign-in"></i><span>Login</span></a>
+                    <% } %> 
+                    <% if (isLogged) { %>
+                      <a href="./logout" class="nav-item nav-link"> <i class="fa fa-sign-out"></i><span>Log-out</span></a>
+                      <a href="./profile" class="nav-item nav-link"><i class="fa fa-user-o"></i> Profile</a>
+                    <% } %>
                 </div>
-            </form> -->
-            <div class="navbar-nav ml-auto">
-                <a href="./" class="nav-item nav-link"><i class="fa fa-home"></i><span>Home</span></a>
-                <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
-                <a href="#" class="nav-item nav-link"><i class="fa fa-envelope"></i><span>Contact US</span></a>
-                <a href="./about" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
-                <a href="./notifications" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
-                <a href="./profile" class="nav-item nav-link"><i class="fa fa-user-o"></i> Profile</a>
-
-                <div sec:autorize="isAuthenticated()">
-                    <button class="btn btn-primary" type="button" id="login"><i class="fa fa-sign-in"></i> Log in</button>
-                    <script type="text/javascript">
-                        $(function() {
-                            $("#loginBtn").click(function () {
-                                window.location.href = '/login'
-                            })
-                        });
-                    </script>
-                </div>
-
-                <div sec:autorize="isAuthenticated()">
-                    <form action="/logout" method="post" class="float-right">
-                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-                        <button class="btn btn-secondary btn-lg" type="button" id="login"><i class="fa fa-sign-out"></i> Logout</button>
-                    </form>
-                </div>
-
             </div>
-        </div>
-    </nav>
-</header>
-
+        </nav>
+    </div>
+  </header>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
