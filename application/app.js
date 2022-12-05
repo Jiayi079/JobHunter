@@ -317,8 +317,9 @@ app.post('/register',function(req,res){
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;
+  var isCompany = req.body.isCompany;
 
-  var sql = "INSERT INTO userData (username,password,email) VALUES ('"+username+"', '"+password+"', '"+email+"')";
+  var sql = "INSERT INTO userData (username,password,email) VALUES ('"+username+"', '"+password+"', '"+email+"', '"+isCompany+"')";
   database.query(sql, function (err, result) {
     if (err) {
       return res.send(err);
