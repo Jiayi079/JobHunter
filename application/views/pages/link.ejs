@@ -55,26 +55,22 @@
                 <div class="navbar-nav ml-auto">
                     <a href="./" class="nav-item nav-link"><i class="fa fa-home"></i><span>Home</span></a>
                     <% if (isCompany) { %>
-                        <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
-                    <% } %>
+                      <a href="./post" class="nav-item nav-link"><i class="fa fa-paper-plane"></i><span>Post Job</span></a>
+                  <% } %>
                     <a href="./about" class="nav-item nav-link"><i class="fa fa-address-book"></i><span>About</span></a>
                     <a href="./notifications" class="nav-item nav-link"><i class="fa fa-bell"></i><span>Notifications</span></a>
                     <% if (!isLogged)  { %>
-                      <a href="./register" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Register</span>
-                      <a href="./login" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Login</span>
+                      <a href="./register" class="nav-item nav-link" ><i class="fa fa-sign-in"></i><span>Register</span></a>
+                      <a href="./login" class="nav-item nav-link"> <i class="fa fa-sign-in"></i><span>Login</span></a>
                     <% } %> 
                     <% if (isLogged) { %>
-                      <a href="./logout" class="nav-item nav-link" <i class="fa fa-sign-in"></i><span>Log-out</span>
+                      <a href="./logout" class="nav-item nav-link"> <i class="fa fa-sign-out"></i><span>Log-out</span></a>
+                      <a href="./profile" class="nav-item nav-link"><i class="fa fa-user-o"></i> Profile</a>
                     <% } %>
-                    <div class="nav-item dropdown navbar-nav ml-auto">
-                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa fa-info-circle"></i> Info</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
-                        </div>
-                    </div>
+                </div>
                     <!-- add navigation icon "help" -->
                     <div class="nav-item dropdown navbar-nav ml-auto">
-                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa fa-info-circle"></i> Help</a>
+                    <a href="./link.ejs" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa fa-info-circle"></i>Help</a>
                     <div class="dropdown-menu">
                         <a href="#">Interview help</a>
                         <a href="#">Resume help</a>
@@ -107,7 +103,7 @@
                 <div class="split">
                     <h1>Interview help</h1>
                     <p>Some description</p>
-                    <p><a href="https://learntocodewith.me/posts/technical-interview/" class="btn btn-primary" role="button">Get Start</a></p> 
+                    <p><a href="https://learntocodewith.me/posts/technical-interview/" class="btn btn-primary" role="button">Get Started</a></p> 
                 </div>
                 <div class="split"><img src="../image/impact-interview-01.png" class="image-style" alt=""></div>
             </div>
@@ -119,7 +115,7 @@
                 <div class="split">
                     <h1>Resume help</h1>
                     <p>Some description</p>
-                    <p><a href="https://www.springboard.com/blog/career-advice/9-tips-for-creating-a-stand-out-tech-resume/" class="btn btn-primary" role="button">Get Start</a></p> 
+                    <p><a href="https://www.springboard.com/blog/career-advice/9-tips-for-creating-a-stand-out-tech-resume/" class="btn btn-primary" role="button">Get Started</a></p> 
                 </div>
                 <div class="split"><img src="../image/how-long-should-a-cover-letter-be-hero-500x333.webp" class="image-style" alt=""></div>
             </div>
@@ -131,7 +127,7 @@
                 <div class="split">
                     <h1>Leetcode help</h1>
                     <p class="description">Some description</p>
-                    <p><a href="https://www.codementor.io/@theabbie/a-guide-to-grinding-leetcode-1sezxvvwwh" class="btn btn-primary" role="button">Get Start</a></p> 
+                    <p><a href="https://www.codementor.io/@theabbie/a-guide-to-grinding-leetcode-1sezxvvwwh" class="btn btn-primary" role="button">Get Started</a></p> 
                 </div>
                 <div class="split"><img src="../image/0_y8puBcHsdWf_dfdB.png" class="image-style" alt=""></div>
             </div>
@@ -143,7 +139,7 @@
                 <div class="split">
                     <h1>Project help</h1>
                     <p>Some description</p>
-                    <p><a href="https://zety.com/blog/programming-projects-for-resume" class="btn btn-primary" role="button">Get Start</a></p> 
+                    <p><a href="https://zety.com/blog/programming-projects-for-resume" class="btn btn-primary" role="button">Get Started</a></p> 
                 </div>
                 <div><img src="../image/shutterstock_1110532412.jpg" class="image-style" alt=""></div>
             </div>

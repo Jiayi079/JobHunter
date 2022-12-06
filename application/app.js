@@ -372,6 +372,12 @@ app.get('/admin', isAdmin, (req, res) => {
     isCompany: req.user ? req.user.isCompany : 0
   })
 })
+app.get('/link', (req, res) => {
+  res.render('pages/link', {
+    isLogged: req.isAuthenticated(),
+    isCompany: req.user ? req.user.isCompany : 0
+  })
+})
 
 app.get('/logout', function(req, res, next) {
   req.logout(function(err) {
