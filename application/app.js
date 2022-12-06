@@ -372,7 +372,7 @@ app.get('/admin', isAdmin, (req, res) => {
     isCompany: req.user ? req.user.isCompany : 0
   })
 })
-app.get('/link', isAdmin, (req, res) => {
+app.get('/link', (req, res) => {
   res.render('pages/link', {
     isLogged: req.isAuthenticated(),
     isCompany: req.user ? req.user.isCompany : 0
